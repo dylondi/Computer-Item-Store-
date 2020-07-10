@@ -60,8 +60,11 @@ public class InventoryController {
     }
 
     public List<ComputerComponent> sortForGUI(List<ComputerComponent> list) {
-        return list.stream().sorted(Comparator.comparing(ComputerComponent::getBrand)).sorted(Comparator.comparing(ComputerComponent::getName)).sorted(Comparator.comparing(ComputerComponent::getCategory)).collect(Collectors
-            .toList());
+        return list.stream()
+                .sorted(Comparator.comparing(ComputerComponent::getBrand))
+                .sorted(Comparator.comparing(ComputerComponent::getName))
+                .sorted(Comparator.comparing(ComputerComponent::getCategory))
+                .collect(Collectors.toList());
     }
 
     @PostMapping(value = "/checkout")

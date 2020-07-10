@@ -45,38 +45,100 @@ public class ComputerComponentFactory {
     }
 
     private static ComputerComponent createStorageComponent(String[] componentType) {
-        return new Storage.StorageBuilder().uuid(UUID.fromString(componentType[0])).category(componentType[1]).name(componentType[2]).brand(componentType[3]).dimension(componentType[8]).intrfce(componentType[11]).size(
-            componentType[12]).price(Integer.parseInt(componentType[13])).quantity(Integer.parseInt(componentType[14])).build();
+        return new Storage.StorageBuilder()
+                .uuid(UUID.fromString(componentType[0]))
+                .category(componentType[1])
+                .name(componentType[2])
+                .brand(componentType[3])
+                .dimension(componentType[8])
+                .intrfce(componentType[11])
+                .size(componentType[12])
+                .price(Integer.parseInt(componentType[13]))
+                .quantity(Integer.parseInt(componentType[14]))
+                .build();
     }
 
     private static ComputerComponent createMemoryComponent(String[] componentType) {
-        return new Memory.MemoryBuilder().uuid(UUID.fromString(componentType[0])).category(componentType[1]).name(componentType[2]).brand(componentType[3]).intrfce(componentType[11]).size(componentType[12]).price(Integer
-            .parseInt(componentType[13])).quantity(Integer.parseInt(componentType[14])).build();
+        return new Memory.MemoryBuilder()
+                .uuid(UUID.fromString(componentType[0]))
+                .category(componentType[1])
+                .name(componentType[2])
+                .brand(componentType[3])
+                .intrfce(componentType[11])
+                .size(componentType[12])
+                .price(Integer.parseInt(componentType[13]))
+                .quantity(Integer.parseInt(componentType[14]))
+                .build();
     }
 
     private static ComputerComponent createGPUComponent(String[] componentType) {
-        return new GPU.GPUBuilder().uuid(UUID.fromString(componentType[0])).category(componentType[1]).name(componentType[2]).brand(componentType[3]).productLine(componentType[4]).numOfCores(componentType[5])
-            .processorClockSpeed(componentType[6]).graphicClockSpeed(componentType[7]).price(Integer.parseInt(componentType[13])).quantity(Integer.parseInt(componentType[14])).build();
+        return new GPU.GPUBuilder()
+                .uuid(UUID.fromString(componentType[0]))
+                .category(componentType[1])
+                .name(componentType[2])
+                .brand(componentType[3])
+                .productLine(componentType[4])
+                .numOfCores(componentType[5])
+                .processorClockSpeed(componentType[6])
+                .graphicClockSpeed(componentType[7])
+                .price(Integer.parseInt(componentType[13]))
+                .quantity(Integer.parseInt(componentType[14]))
+                .build();
     }
 
     private static ComputerComponent createMouseComponent(String[] componentType) {
-        return new Mouse.MouseBuilder().uuid(UUID.fromString(componentType[0])).category(componentType[1]).name(componentType[2]).brand(componentType[3]).dimension(componentType[8]).colour(componentType[10]).price(Integer
-            .parseInt(componentType[13])).quantity(Integer.parseInt(componentType[14])).build();
+        return new Mouse.MouseBuilder()
+                .uuid(UUID.fromString(componentType[0]))
+                .category(componentType[1])
+                .name(componentType[2])
+                .brand(componentType[3])
+                .dimension(componentType[8])
+                .colour(componentType[10])
+                .price(Integer.parseInt(componentType[13]))
+                .quantity(Integer.parseInt(componentType[14]))
+                .build();
     }
 
     private static ComputerComponent createKeyboardComponent(String[] componentType) {
-        return new Keyboard.KeyboardBuilder().uuid(UUID.fromString(componentType[0])).category(componentType[1]).name(componentType[2]).brand(componentType[3]).dimension(componentType[8]).colour(componentType[10]).price(
-            Integer.parseInt(componentType[13])).quantity(Integer.parseInt(componentType[14])).build();
+        return new Keyboard.KeyboardBuilder()
+                .uuid(UUID.fromString(componentType[0]))
+                .category(componentType[1])
+                .name(componentType[2])
+                .brand(componentType[3])
+                .dimension(componentType[8])
+                .colour(componentType[10])
+                .price(Integer.parseInt(componentType[13]))
+                .quantity(Integer.parseInt(componentType[14]))
+                .build();
     }
 
     private static ComputerComponent createMonitorComponent(String[] componentType) {
-        return new Monitor.MonitorBuilder().uuid(UUID.fromString(componentType[0])).category(componentType[1]).name(componentType[2]).brand(componentType[3]).dimension(componentType[8]).resolution(componentType[9]).colour(
-            componentType[10]).price(Integer.parseInt(componentType[13])).quantity(Integer.parseInt(componentType[14])).build();
+        return new Monitor.MonitorBuilder()
+                .uuid(UUID.fromString(componentType[0]))
+                .category(componentType[1])
+                .name(componentType[2])
+                .brand(componentType[3])
+                .dimension(componentType[8])
+                .resolution(componentType[9])
+                .colour(componentType[10])
+                .price(Integer.parseInt(componentType[13]))
+                .quantity(Integer.parseInt(componentType[14]))
+                .build();
     }
 
     private static ComputerComponent createCPUComponent(String[] componentType) {
-        return new CPU.CPUBuilder().uuid(UUID.fromString(componentType[0])).category(componentType[1]).name(componentType[2]).brand(componentType[3]).productLine(componentType[4]).numOfCores(componentType[5])
-            .processorClockSpeed(componentType[6]).graphicClockSpeed(componentType[7]).price(Integer.parseInt(componentType[13])).quantity(Integer.parseInt(componentType[14])).build();
+        return new CPU.CPUBuilder()
+                .uuid(UUID.fromString(componentType[0]))
+                .category(componentType[1])
+                .name(componentType[2])
+                .brand(componentType[3])
+                .productLine(componentType[4])
+                .numOfCores(componentType[5])
+                .processorClockSpeed(componentType[6])
+                .graphicClockSpeed(componentType[7])
+                .price(Integer.parseInt(componentType[13]))
+                .quantity(Integer.parseInt(componentType[14]))
+                .build();
     }
 
 }
