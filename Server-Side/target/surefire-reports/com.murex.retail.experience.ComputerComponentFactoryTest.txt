@@ -1,0 +1,32 @@
+-------------------------------------------------------------------------------
+Test set: com.murex.retail.experience.ComputerComponentFactoryTest
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 0, Errors: 7, Skipped: 0, Time elapsed: 0.005 s <<< FAILURE! - in com.murex.retail.experience.ComputerComponentFactoryTest
+test_CPU_class  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.murex.retail.experience.ComputerComponentFactoryTest.test_CPU_class(ComputerComponentFactoryTest.java:25)
+
+test_Mouse_class  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.murex.retail.experience.ComputerComponentFactoryTest.test_Mouse_class(ComputerComponentFactoryTest.java:59)
+
+test_GPU_class  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.murex.retail.experience.ComputerComponentFactoryTest.test_GPU_class(ComputerComponentFactoryTest.java:33)
+
+test_Memory_class  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.murex.retail.experience.ComputerComponentFactoryTest.test_Memory_class(ComputerComponentFactoryTest.java:67)
+
+test_Keyboard_class  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.murex.retail.experience.ComputerComponentFactoryTest.test_Keyboard_class(ComputerComponentFactoryTest.java:51)
+
+test_Storage_class  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.murex.retail.experience.ComputerComponentFactoryTest.test_Storage_class(ComputerComponentFactoryTest.java:75)
+
+test_Monitor_class  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.murex.retail.experience.ComputerComponentFactoryTest.test_Monitor_class(ComputerComponentFactoryTest.java:42)
+

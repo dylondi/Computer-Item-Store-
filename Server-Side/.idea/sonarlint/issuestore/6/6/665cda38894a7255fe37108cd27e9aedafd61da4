@@ -1,0 +1,4 @@
+
+ssquid:S1206L"PThis class overrides "equals()" and should therefore also override "hashCode()".(İ¢êÍıÿÿÿÿ8ÂŞş‹.
+squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(È½Öû8ÂŞş‹.
+osquid:S3457G"Q%n should be used in place of \n to produce the platform-specific line separator.(ç¨Åª8œÒÁõ .

@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.murex.retail.experience.AnalyserIntegrationTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.435 s <<< FAILURE! - in com.murex.retail.experience.AnalyserIntegrationTest
+com.murex.retail.experience.AnalyserIntegrationTest  Time elapsed: 2.434 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.murex.retail.experience.AnalyserIntegrationTest.setUp(AnalyserIntegrationTest.java:32)
+

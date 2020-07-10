@@ -1,0 +1,304 @@
+Index: src/main/java/com/murex/retail/experience/Monitor.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/murex/retail/experience/Monitor.java	(date 1581419896406)
++++ src/main/java/com/murex/retail/experience/Monitor.java	(date 1581419896406)
+@@ -0,0 +1,29 @@
++package com.murex.retail.experience;
++
++
++public class Monitor extends ComputerComponent {
++
++    private String dimension;
++    private String resolution;
++    private String colour;
++
++    public Monitor(String id, String category, String name, String brand, String dimension, String resolution, String colour, int price, int quantity){
++        super(id, category, name, brand, price, quantity);
++        this.dimension = dimension;
++        this.resolution = resolution;
++        this.colour = colour;
++    }
++    @Override
++    public String getDimension() {
++        return dimension;
++    }
++    @Override
++    public String getResolution() {
++        return resolution;
++    }
++    @Override
++    public String getColour() {
++        return super.getColour();
++    }
++
++}
+Index: src/main/java/com/murex/retail/experience/ComputerComponentFactory.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/murex/retail/experience/ComputerComponentFactory.java	(date 1581420499934)
++++ src/main/java/com/murex/retail/experience/ComputerComponentFactory.java	(date 1581420499934)
+@@ -0,0 +1,30 @@
++package com.murex.retail.experience;
++
++public class ComputerComponentFactory {
++
++    public static ComputerComponent getComputerComponent(String componentType){
++        switch (componentType){
++            case "CPU" : {
++                return new CPU();
++            }
++            case "Monitor" : {
++                return new GPU();
++            }
++            case "Keyboard" : {
++                return new Keyboard();
++            }
++            case "Mouse" : {
++                return new Monitor();
++            }
++            case "GPU" : {
++                return new Memory();
++            }
++            case "Memory" : {
++                return new Mouse();
++            }
++            case "Storage" : {
++                return new Storage();
++            }
++        }
++    }
++}
+Index: src/main/java/com/murex/retail/experience/GPU.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/murex/retail/experience/GPU.java	(date 1581419711913)
++++ src/main/java/com/murex/retail/experience/GPU.java	(date 1581419711913)
+@@ -0,0 +1,37 @@
++package com.murex.retail.experience;
++
++public class GPU extends ComputerComponent {
++
++    private String productLine;
++    private String numOfCores;
++    private String processorClockSpeed;
++    private String graphicsClockSpeed;
++
++    public GPU(String id, String category, String name, String brand, String productLine, String numOfCores, String processorClockSpeed, String graphicsClockSpeed, int price, int quantity){
++        super(id, category, name, brand, price, quantity);
++        this.productLine = productLine;
++        this.numOfCores = numOfCores;
++        this.processorClockSpeed = processorClockSpeed;
++        this.graphicsClockSpeed = graphicsClockSpeed;
++    }
++
++    @Override
++    public String getProductLine() {
++        return productLine;
++    }
++
++    @Override
++    public String getNumOfCores() {
++        return numOfCores;
++    }
++
++    @Override
++    public String getProcessorClockSpeed() {
++        return super.getProcessorClockSpeed();
++    }
++
++    @Override
++    public String getGraphicClockSpeed() {
++        return super.getGraphicClockSpeed();
++    }
++}
+Index: src/main/java/com/murex/retail/experience/Storage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/murex/retail/experience/Storage.java	(date 1581420222690)
++++ src/main/java/com/murex/retail/experience/Storage.java	(date 1581420222690)
+@@ -0,0 +1,31 @@
++package com.murex.retail.experience;
++
++public class Storage extends ComputerComponent {
++
++
++    private String dimension;
++    private String intrfce;
++    private String size;
++
++    public Storage(String id, String category, String name, String brand, String dimension, String intrfce, String size, int price, int quantity){
++        super(id, category, name, brand, price, quantity);
++        this.dimension = dimension;
++        this.intrfce = intrfce;
++        this.size = size;
++    }
++    @Override
++    public String getDimension() {
++        return dimension;
++    }
++
++    @Override
++    public String getIntrfce() {
++        return super.getIntrfce();
++    }
++
++    @Override
++    public String getSize() {
++        return super.getSize();
++    }
++
++}
+Index: src/main/java/com/murex/retail/experience/CPU.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/murex/retail/experience/CPU.java	(date 1581419711892)
++++ src/main/java/com/murex/retail/experience/CPU.java	(date 1581419711892)
+@@ -0,0 +1,38 @@
++package com.murex.retail.experience;
++
++
++public class CPU extends ComputerComponent {
++
++    private String productLine;
++    private String numOfCores;
++    private String processorClockSpeed;
++    private String graphicsClockSpeed;
++
++    public CPU(String id, String category, String name, String brand, String productLine, String numOfCores, String processorClockSpeed, String graphicsClockSpeed, int price, int quantity){
++        super(id, category, name, brand, price, quantity);
++        this.productLine = productLine;
++        this.numOfCores = numOfCores;
++        this.processorClockSpeed = processorClockSpeed;
++        this.graphicsClockSpeed = graphicsClockSpeed;
++    }
++
++    @Override
++    public String getProductLine() {
++        return productLine;
++    }
++
++    @Override
++    public String getNumOfCores() {
++        return numOfCores;
++    }
++
++    @Override
++    public String getProcessorClockSpeed() {
++        return super.getProcessorClockSpeed();
++    }
++
++    @Override
++    public String getGraphicClockSpeed() {
++        return super.getGraphicClockSpeed();
++    }
++}
+Index: src/main/java/com/murex/retail/experience/Memory.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/murex/retail/experience/Memory.java	(date 1581420184679)
++++ src/main/java/com/murex/retail/experience/Memory.java	(date 1581420184679)
+@@ -0,0 +1,27 @@
++package com.murex.retail.experience;
++
++public class Memory extends ComputerComponent{
++
++    private String intrfce;
++    private String size;
++
++    public Memory(String id, String category, String name, String brand, String intrfce, String size, int price, int quantity){
++        super(id, category, name, brand, price, quantity);
++        this.intrfce = intrfce;
++        this.size = size;
++    }
++
++//    public Memory(String id, String category, String name, String brand, int price, int quantity) {
++//        super(id, category, name, brand, price, quantity);
++//    }
++
++    @Override
++    public String getSize() {
++        return super.getSize();
++    }
++
++    @Override
++    public String getIntrfce() {
++        return super.getIntrfce();
++    }
++}
+Index: src/main/java/com/murex/retail/experience/Keyboard.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/murex/retail/experience/Keyboard.java	(date 1581419896390)
++++ src/main/java/com/murex/retail/experience/Keyboard.java	(date 1581419896390)
+@@ -0,0 +1,25 @@
++package com.murex.retail.experience;
++
++public class Keyboard extends ComputerComponent {
++
++    private String dimension;
++    private String colour;
++
++    public Keyboard(String id, String category, String name, String brand, String dimension, String colour, int price, int quantity){
++        super(id, category, name, brand, price, quantity);
++        this.dimension = dimension;
++        this.colour = colour;
++    }
++    @Override
++    public String getDimension() {
++        return dimension;
++    }
++    @Override
++    public String getColour() {
++        return super.getColour();
++    }
++
++
++
++
++}
+Index: src/main/java/com/murex/retail/experience/Mouse.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/murex/retail/experience/Mouse.java	(date 1581419896428)
++++ src/main/java/com/murex/retail/experience/Mouse.java	(date 1581419896428)
+@@ -0,0 +1,23 @@
++package com.murex.retail.experience;
++
++public class Mouse extends ComputerComponent {
++
++
++    private String dimension;
++    private String colour;
++
++    public Mouse(String id, String category, String name, String brand, String dimension, String colour, int price, int quantity){
++        super(id, category, name, brand, price, quantity);
++        this.dimension = dimension;
++        this.colour = colour;
++    }
++    @Override
++    public String getDimension() {
++        return dimension;
++    }
++    @Override
++    public String getColour() {
++        return super.getColour();
++    }
++
++}

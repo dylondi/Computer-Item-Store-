@@ -1,0 +1,92 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="jquery.nice-number.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script>$(function(){
+
+    $('input[type="number"]').niceNumber();
+  
+  });</script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Welcome!</h1>
+      <p class="lead">To the DNTP Computer Hardware Store.</p>
+      <img src = "assets/comp_pic.png"/>
+               <div id="custom-search-input">
+                                <div id = "testDiv" class="input-group col-md-12" style="text-align: center">
+                                    <input type="text" class="search-query form-control" placeholder="Search With Component Name"  name="name" [(ngModel)]="name"/>
+                                    <span class="input-group-btn">
+                                        <button id = "searchBtn"  type="button" (click)="findComponent(); toggleDisplay()">
+                                            <span class=" glyphicon glyphicon-search"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                                <div id = "btnDiv" *ngIf = "!isShow">
+                                <button class="myButton"  [routerLink]="['/list_items']" (click)="reloadButton()">Back</button>
+                            </div>
+                                <div id = "btnDiv2" *ngIf = "isShow">
+                                    <button class="myButton" [routerLink]="['/item_count']">Number of Items</button>
+                                </div>
+                                <div>
+                                    <img class="myButton" id="cart" src="assets/cart.png" [routerLink]="['/cart_page']">
+                                </div>
+                            </div>    
+    </div>
+    
+    
+</div>
+    
+<div class="table">
+<div>
+    <div class="row col-md-6  custyle">
+    <table class="table table-striped custab">
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Product Line</th>
+            <th>Number Of Cores</th>
+            <th>Proc. Clock Speed</th>
+            <th>Graphic Clock Speed</th>
+            <th>Size</th>
+            <th>Dimension</th> 
+            <th>Interface</th>
+            <th>Colour</th>
+            <th>Resolution</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>ID</th>
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let computerComponent of computerComponents">
+            <td>{{computerComponent.category}}</td>
+            <td>{{computerComponent.name}}</td>
+            <td>{{computerComponent.brand}}</td>
+            <td>{{computerComponent.productLine}}</td>
+            <td>{{computerComponent.numOfCores}}</td>
+            <td>{{computerComponent.processorClockSpeed}}</td>
+            <td>{{computerComponent.graphicClockSpeed}}</td>
+            <td>{{computerComponent.size}}</td>
+            <td>{{computerComponent.dimension}}</td>
+            <td>{{computerComponent.intrfce}}</td>
+            <td>{{computerComponent.colour}}</td>
+            <td>{{computerComponent.resolution}}</td>
+            <td>{{computerComponent.price}}</td>
+            <td>{{computerComponent.quantity}}</td>
+            <td>{{computerComponent.uuid}}</td>
+            <td><div class="box"><button class="addToCart" (click)="addToCart(computerComponent)" >Add to Cart</button></div></td>
+    </tbody>
+    </table>
+    </div>
+</div>
+</div>

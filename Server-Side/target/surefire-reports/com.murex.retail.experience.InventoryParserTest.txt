@@ -1,0 +1,15 @@
+-------------------------------------------------------------------------------
+Test set: com.murex.retail.experience.InventoryParserTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in com.murex.retail.experience.InventoryParserTest
+test_create_object_method  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.murex.retail.experience.InventoryParserTest.test_create_object_method(InventoryParserTest.java:21)
+
+test_wrong_number_of_columns_in_csv  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==> expected: <java.lang.ArrayIndexOutOfBoundsException> but was: <java.lang.NullPointerException>
+	at com.murex.retail.experience.InventoryParserTest.test_wrong_number_of_columns_in_csv(InventoryParserTest.java:32)
+Caused by: java.lang.NullPointerException
+	at com.murex.retail.experience.InventoryParserTest.lambda$test_wrong_number_of_columns_in_csv$0(InventoryParserTest.java:32)
+	at com.murex.retail.experience.InventoryParserTest.test_wrong_number_of_columns_in_csv(InventoryParserTest.java:32)
+

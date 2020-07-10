@@ -1,0 +1,4 @@
+
+lsquid:S1206I"PThis class overrides "equals()" and should therefore also override "hashCode()".(İ¢êÍıÿÿÿÿ
+squid:S1186a"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Àê°üÿÿÿÿ
+Nsquid:S1068"2Remove this unused "NOT_APPLICABLE" private field.(Ø İËüÿÿÿÿ

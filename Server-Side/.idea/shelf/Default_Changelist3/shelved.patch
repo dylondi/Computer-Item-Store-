@@ -1,0 +1,103 @@
+Index: src/test/java/com/murex/retail/experience/persistence/ReaderTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>//package com.murex.retail.experience.persistence;\r\n//\r\n//import com.murex.retail.experience.components.CPU;\r\n//import com.murex.retail.experience.components.ComputerComponent;\r\n//import com.murex.retail.experience.inventory.Inventory;\r\n//import com.murex.retail.experience.inventory.InventoryParser;\r\n//import com.murex.retail.experience.inventory.Parser;\r\n//import com.murex.retail.experience.persistence.Reader;\r\n//import com.murex.retail.experience.persistence.Writer;\r\n//import org.junit.jupiter.api.BeforeAll;\r\n//import org.junit.jupiter.api.Test;\r\n//\r\n//import javax.persistence.EntityManager;\r\n//import javax.persistence.EntityManagerFactory;\r\n//import javax.persistence.Persistence;\r\n//import java.io.IOException;\r\n//import java.util.List;\r\n//\r\n//import static org.junit.jupiter.api.Assertions.assertEquals;\r\n//\r\n//public class ReaderTest {\r\n//\r\n//    static Writer writer;\r\n//    static Reader reader;\r\n//    static EntityManager entityManager;\r\n//    static EntityManagerFactory factory;\r\n//    static InventoryParser inventoryParser;\r\n//    static Inventory inventory;\r\n//\r\n//    @BeforeAll\r\n//    public static void setUp() throws IOException {\r\n//        Parser parser = new Parser(\"src/main/resources/Inventory.csv\");\r\n//        List<String> parsedCSV = parser.readCSV();\r\n//        inventory = new Inventory(inventoryParser.createObjects(parsedCSV));\r\n//        factory = Persistence.createEntityManagerFactory(\"ComputerComponents\");\r\n//        inventoryParser = new InventoryParser();\r\n//        entityManager = factory.createEntityManager();\r\n//        writer = new Writer();\r\n//        writer.writeListToDb(inventory.getParsedInventory(), entityManager);\r\n//        reader = new Reader();\r\n//    }\r\n//    @Test\r\n//    void test_reader_class(){\r\n//    List<ComputerComponent> list = reader.getDataFromDB(entityManager);\r\n//    ComputerComponent cc = list.get(0);\r\n//    assertEquals(CPU.class, cc.getClass());\r\n//}\r\n//}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/com/murex/retail/experience/persistence/ReaderTest.java	(revision d78e495cd6f58188008261c3588953a929329874)
++++ src/test/java/com/murex/retail/experience/persistence/ReaderTest.java	(date 1583230365058)
+@@ -1,48 +1,45 @@
+-//package com.murex.retail.experience.persistence;
+-//
+-//import com.murex.retail.experience.components.CPU;
+-//import com.murex.retail.experience.components.ComputerComponent;
+-//import com.murex.retail.experience.inventory.Inventory;
+-//import com.murex.retail.experience.inventory.InventoryParser;
+-//import com.murex.retail.experience.inventory.Parser;
+-//import com.murex.retail.experience.persistence.Reader;
+-//import com.murex.retail.experience.persistence.Writer;
+-//import org.junit.jupiter.api.BeforeAll;
+-//import org.junit.jupiter.api.Test;
+-//
+-//import javax.persistence.EntityManager;
+-//import javax.persistence.EntityManagerFactory;
+-//import javax.persistence.Persistence;
+-//import java.io.IOException;
+-//import java.util.List;
+-//
+-//import static org.junit.jupiter.api.Assertions.assertEquals;
+-//
+-//public class ReaderTest {
+-//
+-//    static Writer writer;
+-//    static Reader reader;
+-//    static EntityManager entityManager;
+-//    static EntityManagerFactory factory;
+-//    static InventoryParser inventoryParser;
+-//    static Inventory inventory;
+-//
+-//    @BeforeAll
+-//    public static void setUp() throws IOException {
+-//        Parser parser = new Parser("src/main/resources/Inventory.csv");
+-//        List<String> parsedCSV = parser.readCSV();
+-//        inventory = new Inventory(inventoryParser.createObjects(parsedCSV));
+-//        factory = Persistence.createEntityManagerFactory("ComputerComponents");
+-//        inventoryParser = new InventoryParser();
+-//        entityManager = factory.createEntityManager();
+-//        writer = new Writer();
+-//        writer.writeListToDb(inventory.getParsedInventory(), entityManager);
+-//        reader = new Reader();
+-//    }
+-//    @Test
+-//    void test_reader_class(){
+-//    List<ComputerComponent> list = reader.getDataFromDB(entityManager);
+-//    ComputerComponent cc = list.get(0);
+-//    assertEquals(CPU.class, cc.getClass());
+-//}
+-//}
++package com.murex.retail.experience.persistence;
++
++import com.murex.retail.experience.components.ComputerComponent;
++import com.murex.retail.experience.inventory.Inventory;
++import com.murex.retail.experience.inventory.InventoryParser;
++import com.murex.retail.experience.inventory.Parser;
++
++import org.junit.jupiter.api.BeforeAll;
++import org.junit.jupiter.api.Test;
++
++import javax.persistence.EntityManager;
++import javax.persistence.EntityManagerFactory;
++import javax.persistence.Persistence;
++import java.io.IOException;
++import java.util.List;
++
++import static org.junit.jupiter.api.Assertions.assertEquals;
++
++public class ReaderTest {
++
++    static Writer writer;
++    static Reader reader;
++    static EntityManager entityManager;
++    static EntityManagerFactory factory;
++    static InventoryParser inventoryParser;
++    static Inventory inventory;
++
++    @BeforeAll
++    public static void setUp() throws IOException {
++        Parser parser = new Parser("src/main/resources/Inventory.csv");
++        List<String> parsedCSV = parser.readCSV();
++        inventory = new Inventory(inventoryParser.createObjects(parsedCSV));
++        factory = Persistence.createEntityManagerFactory("ComputerComponents");
++        entityManager = factory.createEntityManager();
++        writer = new Writer();
++        writer.writeListToDb(inventory.getParsedInventory(), entityManager);
++        reader = new Reader();
++    }
++    @Test
++    void test_reader_class(){
++        List<ComputerComponent> expectedResult = inventory.getParsedInventory();
++        List<ComputerComponent> actualResult = reader.getDataFromDB(entityManager);
++        assertEquals(expectedResult, actualResult);
++}
++}

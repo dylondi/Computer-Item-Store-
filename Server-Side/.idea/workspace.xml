@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7df0657e-cf7a-4fc0-971e-825361254e7e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/murex/retail/experience/Analyser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/side/Analyser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/murex/retail/experience/InMemDbGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/side/InMemDbGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/murex/retail/experience/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/side/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/murex/retail/experience/PersistenceApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/side/PersistenceApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/murex/retail/experience/components/CPU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/side/components/CPU.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/murex/retail/experience/components/ComputerComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/side/components/ComputerComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/murex/retail/experience/components/ComputerComponentFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/side/components/ComputerComponentFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/murex/retail/experience/components/GPU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/side/components/GPU.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/murex/retail/experience/components/Keyboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/side/components/Keyboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/murex/retail/experience/components/Memory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/side/components/Memory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/murex/retail/experience/components/Monitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/side/components/Monitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/murex/retail/experience/components/Mouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/side/components/Mouse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/murex/retail/experience/components/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/side/components/Storage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/murex/retail/experience/exceptions/InvalidCategoryException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/side/exceptions/InvalidCategoryException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/murex/retail/experience/inventory/CsvPersistenceApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/side/inventory/CsvPersistenceApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/murex/retail/experience/inventory/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/side/inventory/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/murex/retail/experience/inventory/InventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/side/inventory/InventoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/murex/retail/experience/inventory/InventoryParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/side/inventory/InventoryParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/murex/retail/experience/inventory/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/side/inventory/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/murex/retail/experience/orders/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/side/orders/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/murex/retail/experience/orders/OrderManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/side/orders/OrderManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/murex/retail/experience/persistence/InventoryPersistenceApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/side/persistence/InventoryPersistenceApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/murex/retail/experience/persistence/JPAUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/side/persistence/JPAUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/murex/retail/experience/persistence/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/side/persistence/Reader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/murex/retail/experience/persistence/Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/side/persistence/Writer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/murex/retail/experience/AnalyserIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/server/side/AnalyserIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/murex/retail/experience/AnalyserIntegrationTestWithDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/server/side/AnalyserIntegrationTestWithDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/murex/retail/experience/components/CPUTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/server/side/components/CPUTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/murex/retail/experience/components/ComputerComponentFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/server/side/components/ComputerComponentFactoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/murex/retail/experience/components/GPUTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/server/side/components/GPUTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/murex/retail/experience/components/KeyboardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/server/side/components/KeyboardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/murex/retail/experience/components/MemoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/server/side/components/MemoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/murex/retail/experience/components/MonitorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/server/side/components/MonitorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/murex/retail/experience/components/MouseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/server/side/components/MouseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/murex/retail/experience/components/StorageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/server/side/components/StorageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/murex/retail/experience/exceptions/InvalidCategoryExceptionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/server/side/exceptions/InvalidCategoryExceptionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/murex/retail/experience/inventory/CsvInventoryApiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/server/side/inventory/CsvInventoryApiTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/murex/retail/experience/inventory/ParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/server/side/inventory/ParserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/murex/retail/experience/persistence/InventoryPersistenceApiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/server/side/persistence/InventoryPersistenceApiTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/murex/retail/experience/persistence/ReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/server/side/persistence/ReaderTest.java" afterDir="false" />
+    </list>
+    <list id="9ecfcf17-d00b-417e-af06-4bdd5a449de7" name="Add email of results to Jenkinsfile" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myAutoScrollToSource" value="true" />
+    <option name="myElementSize" value="136" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="test" type="feb32156:DbDataSourceImpl" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HierarchyBrowserManager">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="true" />
+  </component>
+  <component name="ProjectId" id="1X4uKx55BD2DGV9t09L9OXGDF4y" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="h2" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/murex/retail" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="com.triemax.jalopy" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.murex.retail.experience.components" />
+      <recent name="com.murex.retail.experience.persistence" />
+      <recent name="com.murex.retail.experience.inventory" />
+      <recent name="com.murex.retail.experience.exceptions" />
+      <recent name="com.murex.retail.experience.Exceptions" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ddiruscio\murex-retail-experience\src\test\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\ddiruscio\murex-retail-experience\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.server.side.Main" />
+      <module name="server-side" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.murex.retail.experience.components.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AnalyserIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server-side" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.murex.retail.experience.orders.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.murex.retail.experience" />
+      <option name="MAIN_CLASS_NAME" value="com.murex.retail.experience.AnalyserIntegrationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ComputerComponentTest.test_get_all_untested_component_attributes" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="server-side" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.murex.retail.experience.components.Keyboard" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.murex.retail.experience.components" />
+      <option name="MAIN_CLASS_NAME" value="com.murex.retail.experience.components.ComputerComponentTest" />
+      <option name="METHOD_NAME" value="test_get_all_untested_component_attributes" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CsvInventoryApiTest.tes_save_method" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server-side" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.murex.retail.experience.inventory.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.murex.retail.experience.inventory" />
+      <option name="MAIN_CLASS_NAME" value="com.murex.retail.experience.inventory.CsvInventoryApiTest" />
+      <option name="METHOD_NAME" value="tes_save_method" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CsvInventoryApiTest.test_load_method" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server-side" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.murex.retail.experience.inventory.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.murex.retail.experience.inventory" />
+      <option name="MAIN_CLASS_NAME" value="com.murex.retail.experience.inventory.CsvInventoryApiTest" />
+      <option name="METHOD_NAME" value="test_load_method" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InventoryPersistenceApiTest.test_save_and_load_methods" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server-side" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.murex.retail.experience.persistence.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.murex.retail.experience.persistence" />
+      <option name="MAIN_CLASS_NAME" value="com.murex.retail.experience.persistence.InventoryPersistenceApiTest" />
+      <option name="METHOD_NAME" value="test_save_and_load_methods" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.murex.retail.experience in murex-retail-experience" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="server-side" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.murex.retail.experience.orders.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.murex.retail.experience" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.com.murex.retail.experience in murex-retail-experience" />
+      <item itemvalue="JUnit.ComputerComponentTest.test_get_all_untested_component_attributes" />
+      <item itemvalue="JUnit.AnalyserIntegrationTest" />
+      <item itemvalue="JUnit.CsvInventoryApiTest.tes_save_method" />
+      <item itemvalue="JUnit.CsvInventoryApiTest.test_load_method" />
+      <item itemvalue="JUnit.InventoryPersistenceApiTest.test_save_and_load_methods" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.CsvInventoryApiTest.tes_save_method" />
+        <item itemvalue="JUnit.AnalyserIntegrationTest" />
+        <item itemvalue="JUnit.InventoryPersistenceApiTest.test_save_and_load_methods" />
+        <item itemvalue="JUnit.CsvInventoryApiTest.test_load_method" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7df0657e-cf7a-4fc0-971e-825361254e7e" name="Default Changelist" comment="" />
+      <created>1580317627108</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1580317627108</updated>
+      <workItem from="1580317631354" duration="1230000" />
+      <workItem from="1580374212416" duration="225000" />
+      <workItem from="1580483948160" duration="5478000" />
+      <workItem from="1580722889496" duration="20604000" />
+      <workItem from="1580806784687" duration="21010000" />
+      <workItem from="1580832501006" duration="30583000" />
+      <workItem from="1580979324684" duration="28287000" />
+      <workItem from="1581064212798" duration="6569000" />
+      <workItem from="1581072096166" duration="17411000" />
+      <workItem from="1581323460154" duration="23304000" />
+      <workItem from="1581411843016" duration="1064000" />
+      <workItem from="1581413209641" duration="23845000" />
+      <workItem from="1581496658952" duration="26018000" />
+      <workItem from="1581583621930" duration="15160000" />
+      <workItem from="1581601192119" duration="13507000" />
+      <workItem from="1581630529142" duration="19407000" />
+      <workItem from="1581929686220" duration="24605000" />
+      <workItem from="1582273561562" duration="21099000" />
+      <workItem from="1582306541535" duration="32742000" />
+      <workItem from="1582620232870" duration="17908000" />
+      <workItem from="1582706301794" duration="7870000" />
+      <workItem from="1582795090214" duration="12792000" />
+      <workItem from="1582882099414" duration="11290000" />
+      <workItem from="1583138306662" duration="13713000" />
+      <workItem from="1583224963688" duration="14783000" />
+      <workItem from="1583313540136" duration="7482000" />
+      <workItem from="1583397976140" duration="10548000" />
+      <workItem from="1583492841839" duration="10295000" />
+      <workItem from="1583746261544" duration="12228000" />
+      <workItem from="1583761062018" duration="3314000" />
+      <workItem from="1583764400959" duration="7895000" />
+      <workItem from="1583832130557" duration="15840000" />
+      <workItem from="1583917678456" duration="2089000" />
+      <workItem from="1583921186004" duration="31855000" />
+      <workItem from="1584058631681" duration="12203000" />
+      <workItem from="1584366752158" duration="2606000" />
+      <workItem from="1584535774437" duration="1844000" />
+      <workItem from="1584610540651" duration="284000" />
+      <workItem from="1584611429251" duration="2368000" />
+      <workItem from="1585651344300" duration="1565000" />
+      <workItem from="1585756878888" duration="1214000" />
+      <workItem from="1589384198649" duration="3563000" />
+      <workItem from="1589968373200" duration="6345000" />
+      <workItem from="1590396060329" duration="595000" />
+      <workItem from="1590455484178" duration="1187000" />
+      <workItem from="1590675164801" duration="595000" />
+      <workItem from="1591086963269" duration="1291000" />
+      <workItem from="1591143489499" duration="1223000" />
+      <workItem from="1592180827657" duration="343000" />
+      <workItem from="1592315651110" duration="615000" />
+      <workItem from="1592520267208" duration="1923000" />
+      <workItem from="1592581654110" duration="1242000" />
+      <workItem from="1594161054641" duration="7232000" />
+      <workItem from="1594229290496" duration="606000" />
+    </task>
+    <task id="LOCAL-00001" summary="Add email of results to Jenkinsfile">
+      <created>1580991507791</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1580991507791</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add email of results to Jenkinsfile">
+      <created>1581422374472</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1581422374472</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="SHELVE_DETAILS_PREVIEW_SHOWN" value="true" />
+    <MESSAGE value="Add email of results to Jenkinsfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add email of results to Jenkinsfile" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="256" y="86" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594229468590">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="256" y="86" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860/-1920.90.1920.1040@0.0.1600.860" timestamp="1594229468590" />
+    <state x="650" y="320" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1589384618721">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="650" y="320" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1600.860@0.0.1600.860" timestamp="1589384618721" />
+    <state x="572" y="202" key="FileChooserDialogImpl" timestamp="1592908295764">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="572" y="202" key="FileChooserDialogImpl/0.0.1600.860/-1920.90.1920.1040@0.0.1600.860" timestamp="1592908295764" />
+    <state x="572" y="202" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1585844829475" />
+    <state width="1558" height="2" key="GridCell.Tab.0.bottom" timestamp="1594229908869">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1558" height="2" key="GridCell.Tab.0.bottom/0.0.1600.860/-1920.90.1920.1040@0.0.1600.860" timestamp="1594229908869" />
+    <state width="1558" height="2" key="GridCell.Tab.0.center" timestamp="1594229908868">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1558" height="2" key="GridCell.Tab.0.center/0.0.1600.860/-1920.90.1920.1040@0.0.1600.860" timestamp="1594229908868" />
+    <state width="1558" height="2" key="GridCell.Tab.0.left" timestamp="1594229908868">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1558" height="2" key="GridCell.Tab.0.left/0.0.1600.860/-1920.90.1920.1040@0.0.1600.860" timestamp="1594229908868" />
+    <state width="1558" height="2" key="GridCell.Tab.0.right" timestamp="1594229908869">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1558" height="2" key="GridCell.Tab.0.right/0.0.1600.860/-1920.90.1920.1040@0.0.1600.860" timestamp="1594229908869" />
+    <state x="547" y="161" key="RollbackChangesDialog" timestamp="1589393186151">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="547" y="161" key="RollbackChangesDialog/0.0.1600.860/-1920.90.1920.1040@0.0.1600.860" timestamp="1589393186151" />
+    <state x="404" y="85" key="SettingsEditor" timestamp="1594228918431">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="404" y="85" key="SettingsEditor/0.0.1600.860/-1920.90.1920.1040@0.0.1600.860" timestamp="1594228918431" />
+    <state x="404" y="85" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1594161103964" />
+    <state x="485" y="268" key="com.intellij.ide.util.TipDialog" timestamp="1592521384244">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="485" y="268" key="com.intellij.ide.util.TipDialog/0.0.1600.860/-1920.90.1920.1040@0.0.1600.860" timestamp="1591280130955" />
+    <state x="485" y="268" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1592521384244" />
+    <state x="415" y="5" width="771" height="850" key="find.popup" timestamp="1594229802499">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="415" y="5" width="771" height="850" key="find.popup/0.0.1600.860/-1920.90.1920.1040@0.0.1600.860" timestamp="1594229802499" />
+    <state x="415" y="5" width="771" height="850" key="find.popup/0.0.1600.860@0.0.1600.860" timestamp="1590628281600" />
+    <state x="461" y="199" key="run.anything.popup" timestamp="1594223106938">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="461" y="199" key="run.anything.popup/0.0.1600.860/-1920.90.1920.1040@0.0.1600.860" timestamp="1594223106938" />
+    <state x="450" y="183" width="700" height="634" key="search.everywhere.popup" timestamp="1589397251538">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="450" y="183" width="700" height="634" key="search.everywhere.popup/0.0.1600.860/-1920.90.1920.1040@0.0.1600.860" timestamp="1589397251538" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/murex_retail_experience$MonitorTest.ic" NAME="MonitorTest Coverage Results" MODIFIED="1582632399473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$MemoryTest.ic" NAME="MemoryTest Coverage Results" MODIFIED="1582632393306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$com_murex_retail_experience_inventory_in_murex_retail_experience.ic" NAME="com.murex.retail.experience.inventory in murex-retail-experience Coverage Results" MODIFIED="1582624318222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.inventory.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$StorageTest.ic" NAME="StorageTest Coverage Results" MODIFIED="1582632419490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$Main.ic" NAME="Main Coverage Results" MODIFIED="1581522147493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$com_murex_retail_experience_Exceptions_in_murex_retail_experience.ic" NAME="com.murex.retail.experience.exceptions in murex-retail-experience Coverage Results" MODIFIED="1582562048472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.exceptions.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$MainTest_test_create_object_method.ic" NAME="MainTest.test_create_object_method Coverage Results" MODIFIED="1580915761003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$InvalidCategoryExceptionTest_test_invalid_category_exception_method__1_.ic" NAME="InvalidCategoryExceptionTest.test_invalid_category_exception_method (1) Coverage Results" MODIFIED="1582558506281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.Exceptions.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$ComputerComponentFactoryTest_test_CPU_class.ic" NAME="ComputerComponentFactoryTest.test_CPU_class Coverage Results" MODIFIED="1581586265120" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$GPUTest.ic" NAME="GPUTest Coverage Results" MODIFIED="1582890608295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$InventoryParserTest.ic" NAME="InventoryParserTest Coverage Results" MODIFIED="1582632380084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$AnalyserIntegrationTest.ic" NAME="AnalyserIntegrationTest Coverage Results" MODIFIED="1583139402956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.components.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$MainTest.ic" NAME="MainTest Coverage Results" MODIFIED="1581088724670" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$KeyboardTest.ic" NAME="KeyboardTest Coverage Results" MODIFIED="1582632385723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$com_murex_retail_experience_persistence_in_murex_retail_experience.ic" NAME="com.murex.retail.experience.persistence in murex-retail-experience Coverage Results" MODIFIED="1582905415566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.persistence.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$InventoryPersistenceApiTest_test_save_and_load_methods.ic" NAME="InventoryPersistenceApiTest.test_save_and_load_methods Coverage Results" MODIFIED="1583496683028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.persistence.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$ComputerComponentTest_test_get_all_untested_component_attributes.ic" NAME="ComputerComponentTest.test_get_all_untested_component_attributes Coverage Results" MODIFIED="1581068310124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$AnalyserTest.ic" NAME="AnalyserTest Coverage Results" MODIFIED="1581522156751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$InventoryParserTest_test_create_object_method__1_.ic" NAME="InventoryParserTest.test_create_object_method (1) Coverage Results" MODIFIED="1583250089512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$com_murex_retail_experience_InventoryCreateAndStore_in_murex_retail_experience.ic" NAME="com.murex.retail.experience.inventory in murex-retail-experience Coverage Results" MODIFIED="1582562058496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.persistence.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$com_murex_retail_experience_in_murex_retail_experience.ic" NAME="com.murex.retail.experience in murex-retail-experience Coverage Results" MODIFIED="1583763664750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$ParserTest.ic" NAME="ParserTest Coverage Results" MODIFIED="1582632411489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$ComputerComponentFactoryTest.ic" NAME="ComputerComponentFactoryTest Coverage Results" MODIFIED="1582632345489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$ComputerComponentFactoryTest_test_Memory_class.ic" NAME="ComputerComponentFactoryTest.test_Memory_class Coverage Results" MODIFIED="1581586750304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$MouseTest.ic" NAME="MouseTest Coverage Results" MODIFIED="1582632405556" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$com_murex_retail_experience_exceptions_in_murex_retail_experience.ic" NAME="com.murex.retail.experience.exceptions in murex-retail-experience Coverage Results" MODIFIED="1582905378958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.exceptions.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$MainTest_test_replace_comma_method.ic" NAME="MainTest.test_replace_comma_method Coverage Results" MODIFIED="1580915792442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$InvalidCategoryExceptionTest_test_invalid_category_exception_method.ic" NAME="InvalidCategoryExceptionTest.test_invalid_category_exception_method Coverage Results" MODIFIED="1582554751075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.ExceptionsTest.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$ComputerComponentTest.ic" NAME="ComputerComponentTest Coverage Results" MODIFIED="1582632359430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$ReaderTest_test_reader_class.ic" NAME="ReaderTest.test_reader_class Coverage Results" MODIFIED="1583229560228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.persistence.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$CPUTest.ic" NAME="CPUTest Coverage Results" MODIFIED="1582632367956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/murex_retail_experience$InventoryTest.ic" NAME="InventoryTest Coverage Results" MODIFIED="1581331531585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.murex.retail.experience.*</FILTER>
+    </SUITE>
+  </component>
+</project>

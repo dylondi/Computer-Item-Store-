@@ -1,0 +1,163 @@
+Index: src/main/java/com/murex/retail/experience/Database.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.murex.retail.experience;\r\n\r\nimport java.sql.Connection;\r\nimport java.sql.ResultSet;\r\nimport java.sql.SQLException;\r\nimport java.sql.Statement;\r\n\r\npublic class Database {\r\n\r\n    private final Connection conn;\r\n    private static Statement stmt;\r\n    private static ResultSet rs;\r\n    String sql = \"\";\r\n\r\n    public Database(Connection conn){\r\n        this.conn = conn;\r\n    }\r\n\r\n    public void initialize(){\r\n        stmt = null;\r\n        rs = null;\r\n\r\n    }\r\n    public void deleteSchemaIfAlreadyThereAndCreateNewSchema() throws SQLException {\r\n        stmt = conn.createStatement();\r\n        sql = \"DROP SCHEMA IF EXISTS jdbc_db CASCADE\";\r\n        stmt.executeUpdate(sql);\r\n        sql = \"CREATE SCHEMA jdbc_db\";\r\n        stmt.execute(sql);\r\n        System.out.println(\"Database created\");\r\n        stmt.execute(\"CREATE TABLE IF NOT EXISTS jdbc_db.components\"\r\n                + \"( id VARCHAR(50) NOT NULL,\"\r\n                +\"category VARCHAR(50) NOT NULL,\"\r\n                +\"`name` VARCHAR(50) NOT NULL,\"\r\n                +\"brand VARCHAR(50) NOT NULL,\"\r\n                +\"productLine VARCHAR(50),\"\r\n                +\"numOfCores VARCHAR(50),\"\r\n                +\"processorClockSpeed VARCHAR(50),\"\r\n                +\"graphicClockSpeed VARCHAR(50),\"\r\n                +\"dimension VARCHAR(50),\"\r\n                +\"resolution VARCHAR(50),\"\r\n                +\"colour VARCHAR(50),\"\r\n                +\"interface VARCHAR(50),\"\r\n                +\"`size` VARCHAR(50),\"\r\n                +\"price INT NOT NULL,\"\r\n                +\"quantity INT NOT NULL)\");\r\n        System.out.println(\"Table created\");\r\n    }\r\n\r\n\r\n    public void insertCPU(String [] data) throws SQLException {\r\n        stmt = conn.createStatement();\r\n        sql = \"INSERT INTO JDBC_DB.COMPONENTS(ID, CATEGORY, `NAME`, BRAND, PRODUCTLINE,\" +\r\n                \" NUMOFCORES, PROCESSORCLOCKSPEED, GRAPHICCLOCKSPEED, PRICE, QUANTITY)VALUES('\"+ data[0]+\"','\"+ data[1]+\"','\"+ data[2]+\"','\"+ data[3]+\"','\"\r\n                + data[4]+\"','\"+ data[5]+\"','\"+ data[6]+\"','\"+ data[7]+\"',\"+ Integer.parseInt(data[13])+\",\"+ Integer.parseInt(data[14])+\")\";\r\n        stmt.executeUpdate(sql);\r\n    }\r\n    public void insertMonitor(String [] data) throws SQLException {\r\n        stmt = conn.createStatement();\r\n        sql = \"INSERT INTO JDBC_DB.COMPONENTS(ID, CATEGORY, `NAME`, BRAND, DIMENSION,\" +\r\n                \" RESOLUTION, COLOUR,  PRICE, QUANTITY)VALUES('\"+ data[0]+\"','\"+ data[1]+\"','\"+ data[2]+\"','\"+ data[3]+\"','\"\r\n                + data[8]+\"','\"+ data[9]+\"','\"+ data[10]+\"',\"+ Integer.parseInt(data[13])+\",\"+ Integer.parseInt(data[14])+\")\";\r\n        stmt.executeUpdate(sql);\r\n    }\r\n    public void insertKeyboard(String [] data) throws SQLException {\r\n        stmt = conn.createStatement();\r\n        sql = \"INSERT INTO JDBC_DB.COMPONENTS(ID, CATEGORY, `NAME`, BRAND, DIMENSION,\" +\r\n                \" COLOUR,  PRICE, QUANTITY)VALUES('\"+ data[0]+\"','\"+ data[1]+\"','\"+ data[2]+\"','\"+ data[3]+\"','\"\r\n                + data[8]+\"','\"+ data[10]+\"',\"+ Integer.parseInt(data[13])+\",\"+ Integer.parseInt(data[14])+\")\";\r\n        stmt.executeUpdate(sql);\r\n    }\r\n    public void insertMouse(String [] data) throws SQLException {\r\n        stmt = conn.createStatement();\r\n        sql = \"INSERT INTO JDBC_DB.COMPONENTS(ID, CATEGORY, `NAME`, BRAND, DIMENSION,\" +\r\n                \" COLOUR,  PRICE, QUANTITY)VALUES('\"+ data[0]+\"','\"+ data[1]+\"','\"+ data[2]+\"','\"+ data[3]+\"','\"\r\n                + data[8]+\"','\"+ data[10]+\"',\"+ Integer.parseInt(data[13])+\",\"+ Integer.parseInt(data[14])+\")\";\r\n        stmt.executeUpdate(sql);\r\n    }\r\n    public void insertGPU(String [] data) throws SQLException {\r\n        stmt = conn.createStatement();\r\n        sql = \"INSERT INTO JDBC_DB.COMPONENTS(ID, CATEGORY, `NAME`, BRAND, PRODUCTLINE,\" +\r\n                \" NUMOFCORES, PROCESSORCLOCKSPEED, GRAPHICCLOCKSPEED, PRICE, QUANTITY)VALUES('\"+ data[0]+\"','\"+ data[1]+\"','\"+ data[2]+\"','\"+ data[3]+\"','\"\r\n                + data[4]+\"','\"+ data[5]+\"','\"+ data[6]+\"','\"+ data[7]+\"',\"+ Integer.parseInt(data[13])+\",\"+ Integer.parseInt(data[14])+\")\";\r\n        stmt.executeUpdate(sql);\r\n    }\r\n    public void insertMemory(String [] data) throws SQLException {\r\n        stmt = conn.createStatement();\r\n        sql = \"INSERT INTO JDBC_DB.COMPONENTS(ID, CATEGORY, `NAME`, BRAND, INTERFACE,\" +\r\n                \" `SIZE`, PRICE, QUANTITY)VALUES('\"+ data[0]+\"','\"+ data[1]+\"','\"+ data[2]+\"','\"+ data[3]+\"','\"\r\n                + data[11]+\"','\"+ data[12]+\"',\"+ Integer.parseInt(data[13])+\",\"+ Integer.parseInt(data[14])+\")\";\r\n        stmt.executeUpdate(sql);\r\n    }\r\n    public void insertStorage(String [] data) throws SQLException {\r\n        stmt = conn.createStatement();\r\n        sql = \"INSERT INTO JDBC_DB.COMPONENTS(ID, CATEGORY, `NAME`, BRAND,DIMENSION, INTERFACE,\" +\r\n                \" `SIZE`, PRICE, QUANTITY)VALUES('\"+ data[0]+\"','\"+ data[1]+\"','\"+ data[2]+\"','\"+ data[3]+\"','\"\r\n                + data[8]+\"','\"+data[11]+\"','\"+ data[12]+\"',\"+ Integer.parseInt(data[13])+\",\"+ Integer.parseInt(data[14])+\")\";\r\n        stmt.executeUpdate(sql);\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/murex/retail/experience/Database.java	(revision bd7ca518df56bb791d04599dac14e72be47f5ec8)
++++ src/main/java/com/murex/retail/experience/Database.java	(date 1581613692451)
+@@ -4,6 +4,8 @@
+ import java.sql.ResultSet;
+ import java.sql.SQLException;
+ import java.sql.Statement;
++import java.util.ArrayList;
++import java.util.List;
+ 
+ public class Database {
+ 
+@@ -43,7 +45,8 @@
+                 +"interface VARCHAR(50),"
+                 +"`size` VARCHAR(50),"
+                 +"price INT NOT NULL,"
+-                +"quantity INT NOT NULL)");
++                +"quantity INT NOT NULL," +
++                "PRIMARY KEY (id))");
+         System.out.println("Table created");
+     }
+ 
+@@ -98,4 +101,26 @@
+         stmt.executeUpdate(sql);
+     }
+ 
++
++//    public void retrieveDB() throws SQLException {
++//        List<String> lids = new ArrayList<String>();
++//
++//        String query = "SELECT *, COUNT(*)"
++//                + "FROM jdbc_db.components "
++//                + "GROUP BY CATEGORY";
++//
++//        Statement stmt = conn.createStatement();
++//        try {
++//            ResultSet rs4 = stmt.executeQuery(query);
++//
++//            while (rs4.next()) {
++//                lids.add(rs4.getString());
++//            }
++//        } finally {
++//            stmt.close();
++//        }
++//
++//       System.out.println(lids.get(0));
++//    }
++
+ }
+Index: src/main/java/com/murex/retail/experience/ComputerComponentFactory.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.murex.retail.experience;\r\n\r\nimport java.sql.Connection;\r\nimport java.sql.DriverManager;\r\nimport java.sql.SQLException;\r\n\r\npublic class ComputerComponentFactory {\r\n\r\n    public static Connection conn;\r\n    public static Database database;\r\n\r\n    public static ComputerComponent getComputerComponent(String [] componentType){\r\n\r\n\r\n\r\n\r\n        switch (componentType[1]){\r\n            case \"CPU\" : {\r\n                try {\r\n                    conn = DriverManager.\r\n                            getConnection(\"jdbc:h2:tcp://localhost/~/test\", \"sa\", \"\");\r\n                    database = new Database(conn);\r\n                    database.insertCPU(componentType);\r\n                } catch (SQLException e) {\r\n                    e.printStackTrace();\r\n                }\r\n                return new CPU.CPUBuilder()\r\n                        .id(componentType[0])\r\n                        .category(componentType[1])\r\n                        .name(componentType[2])\r\n                        .brand(componentType[3])\r\n                        .productLine(componentType[4])\r\n                        .numOfCores(componentType[5])\r\n                        .processorClockSpeed(componentType[6])\r\n                        .graphicClockSpeed(componentType[7])\r\n                        .price(Integer.parseInt(componentType[13]))\r\n                        .quantity(Integer.parseInt(componentType[14])).build();\r\n            }\r\n            case \"Monitor\" : {\r\n                try {\r\n                    conn = DriverManager.\r\n                            getConnection(\"jdbc:h2:tcp://localhost/~/test\", \"sa\", \"\");\r\n                    database = new Database(conn);\r\n                    database.insertMonitor(componentType);\r\n                } catch (SQLException e) {\r\n                    e.printStackTrace();\r\n                }\r\n                return new Monitor.MonitorBuilder()\r\n                        .id(componentType[0])\r\n                        .category(componentType[1])\r\n                        .name(componentType[2])\r\n                        .brand(componentType[3])\r\n                        .dimension(componentType[8])\r\n                        .resolution(componentType[9])\r\n                        .colour(componentType[10])\r\n                        .price(Integer.parseInt(componentType[13]))\r\n                        .quantity(Integer.parseInt(componentType[14])).build();\r\n            }\r\n            case \"Keyboard\" :  {\r\n                try {\r\n                    conn = DriverManager.\r\n                            getConnection(\"jdbc:h2:tcp://localhost/~/test\", \"sa\", \"\");\r\n                    database = new Database(conn);\r\n                    database.insertKeyboard(componentType);\r\n                } catch (SQLException e) {\r\n                    e.printStackTrace();\r\n                }\r\n                return new Keyboard.KeyboardBuilder()\r\n                        .id(componentType[0])\r\n                        .category(componentType[1])\r\n                        .name(componentType[2])\r\n                        .brand(componentType[3])\r\n                        .dimension(componentType[8])\r\n                        .colour(componentType[10])\r\n                        .price(Integer.parseInt(componentType[13]))\r\n                        .quantity(Integer.parseInt(componentType[14])).build();\r\n            }\r\n            case \"Mouse\" : {\r\n                try {\r\n                    conn = DriverManager.\r\n                            getConnection(\"jdbc:h2:tcp://localhost/~/test\", \"sa\", \"\");\r\n                    database = new Database(conn);\r\n                    database.insertMouse(componentType);\r\n                } catch (SQLException e) {\r\n                    e.printStackTrace();\r\n                }\r\n                return new Mouse.MouseBuilder()\r\n                        .id(componentType[0])\r\n                        .category(componentType[1])\r\n                        .name(componentType[2])\r\n                        .brand(componentType[3])\r\n                        .dimension(componentType[8])\r\n                        .colour(componentType[10])\r\n                        .price(Integer.parseInt(componentType[13]))\r\n                        .quantity(Integer.parseInt(componentType[14])).build();\r\n            }\r\n            case \"GPU\" : {\r\n                try {\r\n                    conn = DriverManager.\r\n                            getConnection(\"jdbc:h2:tcp://localhost/~/test\", \"sa\", \"\");\r\n                    database = new Database(conn);\r\n                    database.insertGPU(componentType);\r\n                } catch (SQLException e) {\r\n                    e.printStackTrace();\r\n                }\r\n                return new GPU.GPUBuilder()\r\n                        .id(componentType[0])\r\n                        .category(componentType[1])\r\n                        .name(componentType[2])\r\n                        .brand(componentType[3])\r\n                        .productLine(componentType[4])\r\n                        .numOfCores(componentType[5])\r\n                        .processorClockSpeed(componentType[6])\r\n                        .graphicClockSpeed(componentType[7])\r\n                        .price(Integer.parseInt(componentType[13]))\r\n                        .quantity(Integer.parseInt(componentType[14])).build();\r\n            }\r\n            case \"Memory\" : {\r\n                try {\r\n                    conn = DriverManager.\r\n                            getConnection(\"jdbc:h2:tcp://localhost/~/test\", \"sa\", \"\");\r\n                    database = new Database(conn);\r\n                    database.insertMemory(componentType);\r\n                } catch (SQLException e) {\r\n                    e.printStackTrace();\r\n                }\r\n                return new Memory.MemoryBuilder().\r\n                        id(componentType[0])\r\n                        .category(componentType[1])\r\n                        .name(componentType[2])\r\n                        .brand(componentType[3])\r\n                        .intrfce(componentType[11])\r\n                        .size(componentType[12])\r\n                        .price(Integer.parseInt(componentType[13]))\r\n                        .quantity(Integer.parseInt(componentType[14])).build();\r\n            }\r\n            case \"Storage\" : {\r\n                try {\r\n                    conn = DriverManager.\r\n                            getConnection(\"jdbc:h2:tcp://localhost/~/test\", \"sa\", \"\");\r\n                    database = new Database(conn);\r\n                    database.insertStorage(componentType);\r\n                } catch (SQLException e) {\r\n                    e.printStackTrace();\r\n                }\r\n                return new Storage.StorageBuilder()\r\n                        .id(componentType[0])\r\n                        .category(componentType[1])\r\n                        .name(componentType[2])\r\n                        .brand(componentType[3])\r\n                        .dimension(componentType[8])\r\n                        .intrfce(componentType[11])\r\n                        .size(componentType[12])\r\n                        .price(Integer.parseInt(componentType[13]))\r\n                        .quantity(Integer.parseInt(componentType[14])).build();\r\n            }\r\n            default:\r\n                break;\r\n        }\r\n    throw new InvalidCategoryException(componentType[1] + \"is not a valid category.\");\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/murex/retail/experience/ComputerComponentFactory.java	(revision bd7ca518df56bb791d04599dac14e72be47f5ec8)
++++ src/main/java/com/murex/retail/experience/ComputerComponentFactory.java	(date 1581612141521)
+@@ -7,6 +7,16 @@
+ public class ComputerComponentFactory {
+ 
+     public static Connection conn;
++
++    static {
++        try {
++            conn = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test", "sa", "");
++        } catch (SQLException e) {
++            e.printStackTrace();
++        }
++    }
++
++    ;
+     public static Database database;
+ 
+     public static ComputerComponent getComputerComponent(String [] componentType){
+@@ -17,8 +27,6 @@
+         switch (componentType[1]){
+             case "CPU" : {
+                 try {
+-                    conn = DriverManager.
+-                            getConnection("jdbc:h2:tcp://localhost/~/test", "sa", "");
+                     database = new Database(conn);
+                     database.insertCPU(componentType);
+                 } catch (SQLException e) {
+@@ -38,8 +46,7 @@
+             }
+             case "Monitor" : {
+                 try {
+-                    conn = DriverManager.
+-                            getConnection("jdbc:h2:tcp://localhost/~/test", "sa", "");
++
+                     database = new Database(conn);
+                     database.insertMonitor(componentType);
+                 } catch (SQLException e) {
+@@ -58,8 +65,7 @@
+             }
+             case "Keyboard" :  {
+                 try {
+-                    conn = DriverManager.
+-                            getConnection("jdbc:h2:tcp://localhost/~/test", "sa", "");
++
+                     database = new Database(conn);
+                     database.insertKeyboard(componentType);
+                 } catch (SQLException e) {
+@@ -77,8 +83,6 @@
+             }
+             case "Mouse" : {
+                 try {
+-                    conn = DriverManager.
+-                            getConnection("jdbc:h2:tcp://localhost/~/test", "sa", "");
+                     database = new Database(conn);
+                     database.insertMouse(componentType);
+                 } catch (SQLException e) {
+@@ -96,8 +100,6 @@
+             }
+             case "GPU" : {
+                 try {
+-                    conn = DriverManager.
+-                            getConnection("jdbc:h2:tcp://localhost/~/test", "sa", "");
+                     database = new Database(conn);
+                     database.insertGPU(componentType);
+                 } catch (SQLException e) {
+@@ -117,8 +119,6 @@
+             }
+             case "Memory" : {
+                 try {
+-                    conn = DriverManager.
+-                            getConnection("jdbc:h2:tcp://localhost/~/test", "sa", "");
+                     database = new Database(conn);
+                     database.insertMemory(componentType);
+                 } catch (SQLException e) {
+@@ -136,8 +136,6 @@
+             }
+             case "Storage" : {
+                 try {
+-                    conn = DriverManager.
+-                            getConnection("jdbc:h2:tcp://localhost/~/test", "sa", "");
+                     database = new Database(conn);
+                     database.insertStorage(componentType);
+                 } catch (SQLException e) {
+Index: src/main/java/com/murex/retail/experience/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.murex.retail.experience;\r\n\r\nimport java.io.IOException;\r\nimport java.sql.Connection;\r\nimport java.sql.DriverManager;\r\nimport java.sql.SQLException;\r\nimport java.util.*;\r\nimport org.apache.logging.log4j.LogManager;\r\nimport org.apache.logging.log4j.Logger;\r\nimport java.nio.file.NoSuchFileException;\r\n\r\npublic class Main {\r\n\r\n    public static  Connection conn;\r\n    static Database database;\r\n    private static final Logger LOGGER = LogManager.getLogger(Main.class);\r\n    private static final String FILEPATH = \"src/main/resources/Inventory.csv\";\r\n\r\n    public static void main(String[] args) {\r\n\r\n        try {\r\n            conn = DriverManager.\r\n                    getConnection(\"jdbc:h2:tcp://localhost/~/test\", \"sa\", \"\");\r\n\r\n            database = new Database(conn);\r\n            database.deleteSchemaIfAlreadyThereAndCreateNewSchema();\r\n\r\n\r\n            // conn.close();\r\n            Parser parser = new Parser(FILEPATH);\r\n            List<String> parsedCSV = parser.readCSV();\r\n            parser.replaceCommasAndLog(parsedCSV);\r\n\r\n            InventoryParser inventoryParser = new InventoryParser();\r\n            Inventory inventory = new Inventory(inventoryParser.createObjects(parsedCSV));\r\n\r\n            Analyser analyser = new Analyser();\r\n            analyser.performAnalysis(inventory);\r\n        } catch (NoSuchFileException e) {\r\n            LOGGER.error(\"File not found\", e);\r\n\r\n        } catch (IOException e) {\r\n            LOGGER.error(\"Error\", e);\r\n        } catch (SQLException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/murex/retail/experience/Main.java	(revision bd7ca518df56bb791d04599dac14e72be47f5ec8)
++++ src/main/java/com/murex/retail/experience/Main.java	(date 1581613698957)
+@@ -36,6 +36,7 @@
+ 
+             Analyser analyser = new Analyser();
+             analyser.performAnalysis(inventory);
++//            database.retrieveDB();
+         } catch (NoSuchFileException e) {
+             LOGGER.error("File not found", e);
+ 

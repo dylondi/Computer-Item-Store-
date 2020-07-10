@@ -1,0 +1,6 @@
+
+Msquid:S3010#"*Remove this assignment of "entityManager".(«¤œçùÿÿÿÿ8­ÃøŸŒ.
+[squid:UselessImportCheck	"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8­ÃøŸŒ.
+Xsquid:S2209#"5Change this instance-reference to a static reference.(«¤œçùÿÿÿÿ8­ÃøŸŒ.
+Bsquid:S24403"&Remove this instantiation of "Writer".(Šı—Èúÿÿÿÿ
+Xsquid:S22094"5Change this instance-reference to a static reference.(û§íüÿÿÿÿ8Ã–ìŸŒ.

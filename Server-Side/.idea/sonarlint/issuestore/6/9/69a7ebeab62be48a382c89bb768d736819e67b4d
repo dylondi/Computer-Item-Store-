@@ -1,0 +1,9 @@
+
+Xsquid:S2209;"5Change this instance-reference to a static reference.(İˆŒ§úÿÿÿÿ8‚Ç¶´.
+Xsquid:S22095"5Change this instance-reference to a static reference.(†¯”ùÿÿÿÿ8‚Ç¶´.
+[
+squid:S106O"9Replace this use of System.out or System.err by a logger.(ß‡½´ùÿÿÿÿ8‚Ç¶´.
+Isquid:S2440:"&Remove this instantiation of "Reader".(˜é™ãøÿÿÿÿ8‚Ç¶´.
+Isquid:S24403"&Remove this instantiation of "Reader".(˜é™ãøÿÿÿÿ8‚Ç¶´.
+Ssquid:S22094"5Change this instance-reference to a static reference.(àé®³8‚Ç¶´.
+Rsquid:EmptyStatementUsageCheck="Remove this empty statement.(Åñ­õşÿÿÿÿ8¶Óİù .

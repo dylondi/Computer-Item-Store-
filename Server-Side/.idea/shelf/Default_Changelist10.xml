@@ -1,0 +1,19 @@
+<changelist name="Default_Changelist10" date="1580991946450" recycled="false">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Default_Changelist10/shelved.patch" />
+  <option name="DESCRIPTION" value="Default Changelist" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/murex/retail/experience/ComputerComponent$Builder.class" />
+    <option name="AFTER_PATH" value="target/classes/com/murex/retail/experience/ComputerComponent$Builder.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Default_Changelist10/ComputerComponent$Builder.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/murex/retail/experience/ComputerComponent.class" />
+    <option name="AFTER_PATH" value="target/classes/com/murex/retail/experience/ComputerComponent.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Default_Changelist10/ComputerComponent.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/test-classes/com/murex/retail/experience/MainTest.class" />
+    <option name="AFTER_PATH" value="target/test-classes/com/murex/retail/experience/MainTest.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Default_Changelist10/MainTest.class" />
+  </binary>
+</changelist>

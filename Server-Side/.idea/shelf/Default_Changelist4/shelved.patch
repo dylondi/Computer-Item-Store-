@@ -1,0 +1,509 @@
+Index: src/test/java/com/murex/retail/experience/MemoryTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.murex.retail.experience;\r\n\r\nimport org.junit.jupiter.api.Test;\r\n\r\nimport java.util.UUID;\r\n\r\nimport static org.junit.jupiter.api.Assertions.assertEquals;\r\n\r\npublic class MemoryTest {\r\n\r\n    @Test\r\n    void test_memory_class_methods(){\r\n        Memory memory = new Memory.MemoryBuilder()\r\n                .id(0)\r\n                .UUiD(UUID.randomUUID())\r\n                .category(\"Memory\")\r\n                .name(\"a\")\r\n                .brand(\"b\")\r\n                .intrfce(\"c\")\r\n                .size(\"d\")\r\n                .price(2)\r\n                .quantity(2).build();\r\n        assertEquals(\"Memory\", memory.getCategory());\r\n        assertEquals(\"a\", memory.getName());\r\n        assertEquals(\"b\", memory.getBrand());\r\n        assertEquals(\"c\", memory.getIntrfce());\r\n        assertEquals(\"d\", memory.getSize());\r\n        assertEquals(2, memory.getPrice());\r\n        assertEquals(2, memory.getQuantity());\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/com/murex/retail/experience/MemoryTest.java	(revision 9a6de6260589d16cc6d252e2bb21fece931fb75e)
++++ src/test/java/com/murex/retail/experience/MemoryTest.java	(date 1583246774966)
+@@ -11,7 +11,6 @@
+     @Test
+     void test_memory_class_methods(){
+         Memory memory = new Memory.MemoryBuilder()
+-                .id(0)
+                 .UUiD(UUID.randomUUID())
+                 .category("Memory")
+                 .name("a")
+Index: src/main/java/com/murex/retail/experience/InvalidCategoryException.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.murex.retail.experience;\r\n\r\npublic class InvalidCategoryException extends RuntimeException {\r\n\r\n    public InvalidCategoryException(String message) {\r\n        super(message);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/murex/retail/experience/InvalidCategoryException.java	(revision 9a6de6260589d16cc6d252e2bb21fece931fb75e)
++++ src/main/java/com/murex/retail/experience/InvalidCategoryException.java	(date 1583246774895)
+@@ -5,4 +5,8 @@
+     public InvalidCategoryException(String message) {
+         super(message);
+     }
++
++    public InvalidCategoryException() {
++
++    }
+ }
+Index: src/main/java/com/murex/retail/experience/GPU.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.murex.retail.experience;\r\n\r\nimport javax.persistence.Column;\r\nimport javax.persistence.Entity;\r\nimport java.util.UUID;\r\n\r\n@Entity\r\npublic class GPU extends ComputerComponent {\r\n\r\n    public GPU(){\r\n    }\r\n\r\n    public static class GPUBuilder extends ComputerComponent.Builder\r\n    {\r\n        @Column(name = \"PRODUCTLINE\")\r\n        private String productLine;\r\n        @Column(name = \"NUMOFCORES\")\r\n        private String numOfCores;\r\n        @Column(name = \"PROCESSORCLOCKSPEED\")\r\n        private String processorClockSpeed;\r\n        @Column(name = \"GRAPHICCLOCKSPEED\")\r\n        private String graphicClockSpeed;\r\n\r\n        public GPUBuilder() {\r\n            super();\r\n        }\r\n\r\n        public GPU build(){\r\n            return new GPU(this);\r\n        }\r\n\r\n        public GPU.GPUBuilder id(UUID id){\r\n            super.id=id;\r\n            return this;\r\n        }\r\n        public GPU.GPUBuilder category(String category){\r\n            super.category=category;\r\n            return this;\r\n        }\r\n        public GPU.GPUBuilder name(String name){\r\n            super.name=name;\r\n            return this;\r\n        }\r\n        public GPU.GPUBuilder brand(String brand){\r\n            super.brand=brand;\r\n            return this;\r\n        }\r\n        public GPU.GPUBuilder price(int price){\r\n            super.price=price;\r\n            return this;\r\n        }\r\n        public GPU.GPUBuilder quantity(int quantity){\r\n            super.quantity=quantity;\r\n            return this;\r\n        }\r\n\r\n        public GPU.GPUBuilder productLine(String productLine){\r\n            this.productLine = productLine;\r\n            return this;\r\n        }\r\n        public GPU.GPUBuilder numOfCores(String numOfCores){\r\n            this.numOfCores = numOfCores;\r\n            return this;\r\n        }\r\n        public GPU.GPUBuilder processorClockSpeed(String processorClockSpeed){\r\n            this.processorClockSpeed = processorClockSpeed;\r\n            return this;\r\n        }\r\n        public GPU.GPUBuilder graphicClockSpeed(String graphicClockSpeed){\r\n            this.graphicClockSpeed = graphicClockSpeed;\r\n            return this;\r\n        }\r\n    }\r\n\r\n    private String productLine;\r\n    private String numOfCores;\r\n    private String processorClockSpeed;\r\n    private String graphicClockSpeed;\r\n\r\n    public GPU(GPU.GPUBuilder gpuBuilder) {\r\n        super(gpuBuilder);\r\n        this.productLine = gpuBuilder.productLine;\r\n        this.numOfCores = gpuBuilder.numOfCores;\r\n        this.processorClockSpeed = gpuBuilder.processorClockSpeed;\r\n        this.graphicClockSpeed = gpuBuilder.graphicClockSpeed;\r\n    }\r\n\r\n    @Override\r\n    public String getProductLine() {\r\n        return productLine;\r\n    }\r\n\r\n    @Override\r\n    public String getNumOfCores() {\r\n        return numOfCores;\r\n    }\r\n\r\n    @Override\r\n    public String getProcessorClockSpeed() {\r\n        return processorClockSpeed;\r\n    }\r\n\r\n    @Override\r\n    public String getGraphicClockSpeed() {\r\n        return graphicClockSpeed;\r\n    }\r\n    @Override\r\n    public String toString(){\r\n        return String.format(\"%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%d\\t%d\\n\", getId() , getUUiD(), getCategory(), getName(), getBrand(), getProductLine(), getNumOfCores(), getProcessorClockSpeed(), getGraphicClockSpeed(), getPrice(), getQuantity());\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/murex/retail/experience/GPU.java	(revision 9a6de6260589d16cc6d252e2bb21fece931fb75e)
++++ src/main/java/com/murex/retail/experience/GPU.java	(date 1583246793185)
+@@ -12,13 +12,10 @@
+ 
+     public static class GPUBuilder extends ComputerComponent.Builder
+     {
+-        @Column(name = "PRODUCTLINE")
++
+         private String productLine;
+-        @Column(name = "NUMOFCORES")
+         private String numOfCores;
+-        @Column(name = "PROCESSORCLOCKSPEED")
+         private String processorClockSpeed;
+-        @Column(name = "GRAPHICCLOCKSPEED")
+         private String graphicClockSpeed;
+ 
+         public GPUBuilder() {
+@@ -29,55 +26,59 @@
+             return new GPU(this);
+         }
+ 
+-        public GPU.GPUBuilder id(UUID id){
+-            super.id=id;
++        public GPUBuilder UUiD(UUID UUiD){
++            super.UUiD=UUiD;
+             return this;
+         }
+-        public GPU.GPUBuilder category(String category){
++        public GPUBuilder category(String category){
+             super.category=category;
+             return this;
+         }
+-        public GPU.GPUBuilder name(String name){
++        public GPUBuilder name(String name){
+             super.name=name;
+             return this;
+         }
+-        public GPU.GPUBuilder brand(String brand){
++        public GPUBuilder brand(String brand){
+             super.brand=brand;
+             return this;
+         }
+-        public GPU.GPUBuilder price(int price){
++        public GPUBuilder price(int price){
+             super.price=price;
+             return this;
+         }
+-        public GPU.GPUBuilder quantity(int quantity){
++        public GPUBuilder quantity(int quantity){
+             super.quantity=quantity;
+             return this;
+         }
+ 
+-        public GPU.GPUBuilder productLine(String productLine){
++        public GPUBuilder productLine(String productLine){
+             this.productLine = productLine;
+             return this;
+         }
+-        public GPU.GPUBuilder numOfCores(String numOfCores){
++        public GPUBuilder numOfCores(String numOfCores){
+             this.numOfCores = numOfCores;
+             return this;
+         }
+-        public GPU.GPUBuilder processorClockSpeed(String processorClockSpeed){
++        public GPUBuilder processorClockSpeed(String processorClockSpeed){
+             this.processorClockSpeed = processorClockSpeed;
+             return this;
+         }
+-        public GPU.GPUBuilder graphicClockSpeed(String graphicClockSpeed){
++        public GPUBuilder graphicClockSpeed(String graphicClockSpeed){
+             this.graphicClockSpeed = graphicClockSpeed;
+             return this;
+         }
+     }
+ 
++    @Column(name = "PRODUCTLINE")
+     private String productLine;
++    @Column(name = "NUMOFCORES")
+     private String numOfCores;
++    @Column(name = "PROCESSORCLOCKSPEED")
+     private String processorClockSpeed;
++    @Column(name = "GRAPHICCLOCKSPEED")
+     private String graphicClockSpeed;
+ 
+-    public GPU(GPU.GPUBuilder gpuBuilder) {
++    public GPU(GPUBuilder gpuBuilder) {
+         super(gpuBuilder);
+         this.productLine = gpuBuilder.productLine;
+         this.numOfCores = gpuBuilder.numOfCores;
+@@ -85,28 +86,24 @@
+         this.graphicClockSpeed = gpuBuilder.graphicClockSpeed;
+     }
+ 
+-    @Override
+     public String getProductLine() {
+         return productLine;
+     }
+ 
+-    @Override
+     public String getNumOfCores() {
+         return numOfCores;
+     }
+ 
+-    @Override
+     public String getProcessorClockSpeed() {
+         return processorClockSpeed;
+     }
+ 
+-    @Override
+     public String getGraphicClockSpeed() {
+         return graphicClockSpeed;
+     }
+     @Override
+     public String toString(){
+-        return String.format("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%d\t%d\n", getId() , getUUiD(), getCategory(), getName(), getBrand(), getProductLine(), getNumOfCores(), getProcessorClockSpeed(), getGraphicClockSpeed(), getPrice(), getQuantity());
++        return String.format("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%d\t%d\n", getUUiD(), getCategory(), getName(), getBrand(), getProductLine(), getNumOfCores(), getProcessorClockSpeed(), getGraphicClockSpeed(), getPrice(), getQuantity());
+     }
+ 
+ }
+Index: src/main/java/com/murex/retail/experience/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.murex.retail.experience;\r\n\r\nimport java.io.IOException;\r\nimport java.util.*;\r\nimport org.apache.logging.log4j.LogManager;\r\nimport org.apache.logging.log4j.Logger;\r\nimport java.nio.file.NoSuchFileException;\r\nimport static com.murex.retail.experience.Reader.getDataFromDB;\r\n\r\npublic class Main {\r\n\r\n    private static final Logger LOGGER = LogManager.getLogger(Main.class);\r\n    private static final String FILEPATH = \"src/main/resources/Inventory.csv\";\r\n\r\n\r\n    public static void main(String[] args) {\r\n\r\n        try {\r\n            Parser parser = new Parser(FILEPATH);\r\n            List<String> parsedCSV = parser.readCSV();\r\n            parser.replaceCommasAndLog(parsedCSV);\r\n\r\n            InventoryParser inventoryParser = new InventoryParser();\r\n            Inventory inventory = new Inventory(inventoryParser.createObjects(parsedCSV));\r\n\r\n            Analyser analyser = new Analyser();\r\n            analyser.performAnalysis(inventory);\r\n\r\n            Writer writer = new Writer();\r\n            writer.writeListToDb(inventory.getParsedInventory());\r\n\r\n            Writer writer = new Writer();\r\n            writer.writeListToDb(inventory.getParsedInventory());\r\n\r\n            List<ComputerComponent> list = getDataFromDB();\r\n            Inventory inventory1 = new Inventory(list);\r\n            analyser.performAnalysis(inventory1);\r\n\r\n        } catch (NoSuchFileException e) {\r\n            LOGGER.error(\"File not found\", e);\r\n\r\n        } catch (IOException e) {\r\n            LOGGER.error(\"Error\", e);\r\n        }\r\n    }\r\n\r\n\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/murex/retail/experience/Main.java	(revision 9a6de6260589d16cc6d252e2bb21fece931fb75e)
++++ src/main/java/com/murex/retail/experience/Main.java	(date 1583246147881)
+@@ -29,9 +29,6 @@
+             Writer writer = new Writer();
+             writer.writeListToDb(inventory.getParsedInventory());
+ 
+-            Writer writer = new Writer();
+-            writer.writeListToDb(inventory.getParsedInventory());
+-
+             List<ComputerComponent> list = getDataFromDB();
+             Inventory inventory1 = new Inventory(list);
+             analyser.performAnalysis(inventory1);
+Index: src/test/java/com/murex/retail/experience/KeyboardTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.murex.retail.experience;\r\n\r\nimport org.junit.jupiter.api.Test;\r\n\r\nimport java.security.Key;\r\nimport java.util.UUID;\r\n\r\nimport static org.junit.jupiter.api.Assertions.assertEquals;\r\n\r\npublic class KeyboardTest {\r\n\r\n    @Test\r\n    void test_keyboard_class_methods(){\r\n        Keyboard keyboard = new Keyboard.KeyboardBuilder()\r\n                .id(0)\r\n                .UUiD(UUID.randomUUID())\r\n                .category(\"Keyboard\")\r\n                .name(\"a\")\r\n                .brand(\"b\")\r\n                .dimension(\"c\")\r\n                .colour(\"d\")\r\n                .price(2)\r\n                .quantity(2).build();\r\n        assertEquals(\"Keyboard\", keyboard.getCategory());\r\n        assertEquals(\"a\", keyboard.getName());\r\n        assertEquals(\"b\", keyboard.getBrand());\r\n        assertEquals(\"c\", keyboard.getDimension());\r\n        assertEquals(\"d\", keyboard.getColour());\r\n        assertEquals(2, keyboard.getPrice());\r\n        assertEquals(2, keyboard.getQuantity());\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/com/murex/retail/experience/KeyboardTest.java	(revision 9a6de6260589d16cc6d252e2bb21fece931fb75e)
++++ src/test/java/com/murex/retail/experience/KeyboardTest.java	(date 1583246774950)
+@@ -12,7 +12,6 @@
+     @Test
+     void test_keyboard_class_methods(){
+         Keyboard keyboard = new Keyboard.KeyboardBuilder()
+-                .id(0)
+                 .UUiD(UUID.randomUUID())
+                 .category("Keyboard")
+                 .name("a")
+Index: src/test/java/com/murex/retail/experience/InventoryParserTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.murex.retail.experience;\r\n\r\nimport org.junit.jupiter.api.Assertions;\r\nimport org.junit.jupiter.api.Test;\r\n\r\nimport java.io.IOException;\r\nimport java.nio.file.NoSuchFileException;\r\nimport java.util.ArrayList;\r\nimport java.util.Arrays;\r\nimport java.util.List;\r\n\r\nimport static org.junit.jupiter.api.Assertions.assertEquals;\r\n\r\npublic class InventoryParserTest {\r\n\r\n    @Test\r\n    void test_create_object_method(){\r\n        List<String> test = (Arrays.asList(\"dummy, line, test,a,s,d,f,g,h,j,k,l,o,2,2\",\"a,CPU,c,d,e,f,g,h,i,j,k,l,m,2,3\"));\r\n        ComputerComponent cc = new CPU.CPUBuilder()\r\n                .id(\"a\")\r\n                .category(\"CPU\")\r\n                .name(\"c\")\r\n                .brand(\"d\")\r\n                .productLine(\"e\")\r\n                .numOfCores(\"f\")\r\n                .processorClockSpeed(\"g\")\r\n                .graphicClockSpeed(\"h\")\r\n                .price(2)\r\n                .quantity(3)\r\n                .build();\r\n        List<ComputerComponent> expectedResult = new ArrayList<ComputerComponent>();\r\n        expectedResult.add(cc);\r\n        InventoryParser inventoryParser= new InventoryParser();\r\n        List<ComputerComponent> actualResult = inventoryParser.createObjects(test);\r\n        assertEquals(expectedResult,actualResult);\r\n    }\r\n\r\n    @Test\r\n    void test_wrong_number_of_columns_in_csv() throws IOException {\r\n        List<String> test = (Arrays.asList(\"dummy, line, test,a,s,d,f,g,j,k,l,o,2,2\",\"b5709966-76a6-48fb-ab72-18be9135230a,CPU,c,d,e\"));\r\n        InventoryParser inventoryParser = new InventoryParser();\r\n        Assertions.assertThrows(ArrayIndexOutOfBoundsException.class, () -> inventoryParser.createObjects(test));\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/com/murex/retail/experience/InventoryParserTest.java	(revision 9a6de6260589d16cc6d252e2bb21fece931fb75e)
++++ src/test/java/com/murex/retail/experience/InventoryParserTest.java	(date 1583246774993)
+@@ -17,7 +17,6 @@
+     void test_create_object_method(){
+         List<String> test = (Arrays.asList("dummy, line, test,a,s,d,f,g,h,j,k,l,o,2,2","a,CPU,c,d,e,f,g,h,i,j,k,l,m,2,3"));
+         ComputerComponent cc = new CPU.CPUBuilder()
+-                .id("a")
+                 .category("CPU")
+                 .name("c")
+                 .brand("d")
+Index: src/test/java/com/murex/retail/experience/MouseTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.murex.retail.experience;\r\n\r\nimport org.junit.jupiter.api.Test;\r\n\r\nimport java.util.UUID;\r\n\r\nimport static org.junit.jupiter.api.Assertions.assertEquals;\r\n\r\npublic class MouseTest {\r\n\r\n    @Test\r\n    void test_mouse_class_methods(){\r\n        Mouse mouse = new Mouse.MouseBuilder()\r\n                .id(0)\r\n                .UUiD(UUID.randomUUID())\r\n                .category(\"Mouse\")\r\n                .name(\"a\")\r\n                .brand(\"b\")\r\n                .dimension(\"c\")\r\n                .colour(\"d\")\r\n                .price(2)\r\n                .quantity(2).build();\r\n        assertEquals(\"Mouse\", mouse.getCategory());\r\n        assertEquals(\"a\", mouse.getName());\r\n        assertEquals(\"b\", mouse.getBrand());\r\n        assertEquals(\"c\", mouse.getDimension());\r\n        assertEquals(\"d\", mouse.getColour());\r\n        assertEquals(2, mouse.getPrice());\r\n        assertEquals(2, mouse.getQuantity());\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/com/murex/retail/experience/MouseTest.java	(revision 9a6de6260589d16cc6d252e2bb21fece931fb75e)
++++ src/test/java/com/murex/retail/experience/MouseTest.java	(date 1583246774907)
+@@ -11,7 +11,6 @@
+     @Test
+     void test_mouse_class_methods(){
+         Mouse mouse = new Mouse.MouseBuilder()
+-                .id(0)
+                 .UUiD(UUID.randomUUID())
+                 .category("Mouse")
+                 .name("a")
+Index: src/test/java/com/murex/retail/experience/StorageTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.murex.retail.experience;\r\n\r\nimport org.junit.jupiter.api.Test;\r\n\r\nimport java.util.UUID;\r\n\r\nimport static org.junit.jupiter.api.Assertions.assertEquals;\r\n\r\npublic class StorageTest {\r\n\r\n    @Test\r\n    void test_memory_class_methods(){\r\n        Storage storage = new Storage.StorageBuilder()\r\n                .id(0)\r\n                .UUiD(UUID.randomUUID())\r\n                .category(\"Storage\")\r\n                .name(\"a\")\r\n                .brand(\"b\")\r\n                .dimension(\"c\")\r\n                .intrfce(\"d\")\r\n                .size(\"e\")\r\n                .price(2)\r\n                .quantity(2).build();\r\n        assertEquals(\"Storage\", storage.getCategory());\r\n        assertEquals(\"a\", storage.getName());\r\n        assertEquals(\"b\", storage.getBrand());\r\n        assertEquals(\"c\", storage.getDimension());\r\n        assertEquals(\"d\", storage.getIntrfce());\r\n        assertEquals(\"e\", storage.getSize());\r\n        assertEquals(2, storage.getPrice());\r\n        assertEquals(2, storage.getQuantity());\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/com/murex/retail/experience/StorageTest.java	(revision 9a6de6260589d16cc6d252e2bb21fece931fb75e)
++++ src/test/java/com/murex/retail/experience/StorageTest.java	(date 1583246774922)
+@@ -11,7 +11,6 @@
+     @Test
+     void test_memory_class_methods(){
+         Storage storage = new Storage.StorageBuilder()
+-                .id(0)
+                 .UUiD(UUID.randomUUID())
+                 .category("Storage")
+                 .name("a")
+Index: src/test/java/com/murex/retail/experience/MonitorTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.murex.retail.experience;\r\n\r\nimport org.junit.jupiter.api.Test;\r\n\r\nimport java.util.UUID;\r\n\r\nimport static org.junit.jupiter.api.Assertions.assertEquals;\r\n\r\npublic class MonitorTest {\r\n\r\n    @Test\r\n    void test_monitor_class_methods(){\r\n        Monitor monitor = new Monitor.MonitorBuilder()\r\n                .id(0)\r\n                .UUiD(UUID.randomUUID())\r\n                .category(\"Monitor\")\r\n                .name(\"a\")\r\n                .brand(\"b\")\r\n                .dimension(\"c\")\r\n                .resolution(\"d\")\r\n                .colour(\"e\")\r\n                .price(2)\r\n                .quantity(2).build();\r\n        assertEquals(\"Monitor\", monitor.getCategory());\r\n        assertEquals(\"a\", monitor.getName());\r\n        assertEquals(\"b\", monitor.getBrand());\r\n        assertEquals(\"c\", monitor.getDimension());\r\n        assertEquals(\"d\", monitor.getResolution());\r\n        assertEquals(\"e\", monitor.getColour());\r\n        assertEquals(2, monitor.getPrice());\r\n        assertEquals(2, monitor.getQuantity());\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/com/murex/retail/experience/MonitorTest.java	(revision 9a6de6260589d16cc6d252e2bb21fece931fb75e)
++++ src/test/java/com/murex/retail/experience/MonitorTest.java	(date 1583246774935)
+@@ -11,7 +11,6 @@
+     @Test
+     void test_monitor_class_methods(){
+         Monitor monitor = new Monitor.MonitorBuilder()
+-                .id(0)
+                 .UUiD(UUID.randomUUID())
+                 .category("Monitor")
+                 .name("a")
+Index: src/test/java/com/murex/retail/experience/GPUTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.murex.retail.experience;\r\n\r\nimport org.junit.jupiter.api.Test;\r\n\r\nimport java.util.UUID;\r\n\r\nimport static org.junit.jupiter.api.Assertions.assertEquals;\r\n\r\npublic class GPUTest {\r\n\r\n    @Test\r\n    void test_gpu_class_methods(){\r\n        GPU gpu = new GPU.GPUBuilder()\r\n                .id(0)\r\n                .UUiD(UUID.randomUUID())\r\n                .category(\"GPU\")\r\n                .name(\"a\")\r\n                .brand(\"b\")\r\n                .productLine(\"c\")\r\n                .numOfCores(\"d\")\r\n                .processorClockSpeed(\"e\")\r\n                .graphicClockSpeed(\"f\")\r\n                .price(2)\r\n                .quantity(2).build();\r\n        assertEquals(\"GPU\", gpu.getCategory());\r\n        assertEquals(\"a\", gpu.getName());\r\n        assertEquals(\"b\", gpu.getBrand());\r\n        assertEquals(\"c\", gpu.getProductLine());\r\n        assertEquals(\"d\", gpu.getNumOfCores());\r\n        assertEquals(\"e\", gpu.getProcessorClockSpeed());\r\n        assertEquals(\"f\", gpu.getGraphicClockSpeed());\r\n        assertEquals(2, gpu.getPrice());\r\n        assertEquals(2, gpu.getQuantity());\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/com/murex/retail/experience/GPUTest.java	(revision 9a6de6260589d16cc6d252e2bb21fece931fb75e)
++++ src/test/java/com/murex/retail/experience/GPUTest.java	(date 1583246775007)
+@@ -11,7 +11,6 @@
+     @Test
+     void test_gpu_class_methods(){
+         GPU gpu = new GPU.GPUBuilder()
+-                .id(0)
+                 .UUiD(UUID.randomUUID())
+                 .category("GPU")
+                 .name("a")
+Index: src/main/java/com/murex/retail/experience/Storage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.murex.retail.experience;\r\n\r\nimport javax.persistence.Column;\r\nimport javax.persistence.Entity;\r\nimport java.util.UUID;\r\n\r\n@Entity\r\npublic class Storage extends ComputerComponent {\r\n\r\n\r\n    public Storage(){\r\n    }\r\n    public static class StorageBuilder extends ComputerComponent.Builder\r\n    {\r\n        @Column(name = \"DIMENSION\")\r\n        private String dimension;\r\n        @Column(name = \"INTERFACE\")\r\n        private String intrfce;\r\n        @Column(name = \"SIZE\")\r\n        private String size;\r\n\r\n        public StorageBuilder() {\r\n            super();\r\n        }\r\n\r\n        public Storage build(){\r\n            return new Storage(this);\r\n        }\r\n\r\n        public Storage.StorageBuilder UUiD(UUID UUiD){\r\n            super.UUiD=UUiD;\r\n            return this;\r\n        }\r\n        public StorageBuilder category(String category){\r\n            super.category=category;\r\n            return this;\r\n        }\r\n        public StorageBuilder name(String name){\r\n            super.name=name;\r\n            return this;\r\n        }\r\n        public StorageBuilder brand(String brand){\r\n            super.brand=brand;\r\n            return this;\r\n        }\r\n        public StorageBuilder price(int price){\r\n            super.price=price;\r\n            return this;\r\n        }\r\n        public StorageBuilder quantity(int quantity){\r\n            super.quantity=quantity;\r\n            return this;\r\n        }\r\n\r\n        public StorageBuilder dimension(String dimension){\r\n            this.dimension = dimension;\r\n            return this;\r\n        }\r\n        public StorageBuilder intrfce(String intrfce){\r\n            this.intrfce = intrfce;\r\n            return this;\r\n        }\r\n        public StorageBuilder size(String size){\r\n            this.size = size;\r\n            return this;\r\n        }\r\n\r\n    }\r\n    private String dimension;\r\n    private String intrfce;\r\n    private String size;\r\n\r\n    public Storage(Storage.StorageBuilder memoryBuilder) {\r\n        super(memoryBuilder);\r\n        this.dimension = memoryBuilder.dimension;\r\n        this.intrfce = memoryBuilder.intrfce;\r\n        this.size = memoryBuilder.size;\r\n\r\n    }\r\n\r\n    public String getIntrfce() {\r\n        return intrfce;\r\n    }\r\n    public String getSize() {\r\n        return size;\r\n    }\r\n    public String getDimension() {\r\n        return dimension;\r\n    }\r\n\r\n    @Override\r\n    public String toString(){\r\n        return String.format(\"%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%d\\t%d\\n\", getUUiD(), getCategory(), getName(), getBrand(), getDimension(), getIntrfce(), getSize(), getPrice(), getQuantity());\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/murex/retail/experience/Storage.java	(revision 9a6de6260589d16cc6d252e2bb21fece931fb75e)
++++ src/main/java/com/murex/retail/experience/Storage.java	(date 1583246712267)
+@@ -12,11 +12,8 @@
+     }
+     public static class StorageBuilder extends ComputerComponent.Builder
+     {
+-        @Column(name = "DIMENSION")
+         private String dimension;
+-        @Column(name = "INTERFACE")
+         private String intrfce;
+-        @Column(name = "SIZE")
+         private String size;
+ 
+         public StorageBuilder() {
+@@ -66,8 +63,13 @@
+         }
+ 
+     }
++
++
++    @Column(name = "DIMENSION")
+     private String dimension;
++    @Column(name = "INTERFACE")
+     private String intrfce;
++    @Column(name = "SIZE")
+     private String size;
+ 
+     public Storage(Storage.StorageBuilder memoryBuilder) {
+Index: src/main/java/com/murex/retail/experience/Mouse.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.murex.retail.experience;\r\n\r\nimport javax.persistence.Column;\r\nimport javax.persistence.Entity;\r\nimport java.util.UUID;\r\n\r\n@Entity\r\npublic class Mouse extends ComputerComponent {\r\n\r\n    public Mouse(){\r\n    }\r\n\r\n    public static class MouseBuilder extends ComputerComponent.Builder\r\n    {\r\n        @Column(name = \"DIMENSION\")\r\n        private String dimension;\r\n        @Column(name = \"COLOUR\")\r\n        private String colour;\r\n\r\n        public MouseBuilder() {\r\n            super();\r\n\r\n        }\r\n\r\n        public Mouse build(){\r\n            return new Mouse(this);\r\n        }\r\n\r\n        public Mouse.MouseBuilder UUiD(UUID UUiD){\r\n            super.UUiD=UUiD;\r\n            return this;\r\n        }\r\n        public MouseBuilder category(String category){\r\n            super.category=category;\r\n            return this;\r\n        }\r\n        public MouseBuilder name(String name){\r\n            super.name=name;\r\n            return this;\r\n        }\r\n        public MouseBuilder brand(String brand){\r\n            super.brand=brand;\r\n            return this;\r\n        }\r\n        public MouseBuilder price(int price){\r\n            super.price=price;\r\n            return this;\r\n        }\r\n        public MouseBuilder quantity(int quantity){\r\n            super.quantity=quantity;\r\n            return this;\r\n        }\r\n\r\n        public MouseBuilder dimension(String dimension){\r\n            this.dimension = dimension;\r\n            return this;\r\n        }\r\n        public MouseBuilder colour(String colour){\r\n            this.colour = colour;\r\n            return this;\r\n        }\r\n\r\n    }\r\n    private String dimension;\r\n    private String colour;\r\n\r\n    public Mouse(Mouse.MouseBuilder mouseBuilder) {\r\n        super(mouseBuilder);\r\n        this.dimension = mouseBuilder.dimension;\r\n        this.colour = mouseBuilder.colour;\r\n\r\n    }\r\n\r\n    public String getDimension() {\r\n        return dimension;\r\n    }\r\n\r\n    public String getColour() {\r\n        return colour;\r\n    }\r\n    @Override\r\n    public String toString(){\r\n        return String.format(\"%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%d\\t%d\\n\", getUUiD(), getCategory(), getName(), getBrand(), getDimension(), getColour(), getPrice(), getQuantity());\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/murex/retail/experience/Mouse.java	(revision 9a6de6260589d16cc6d252e2bb21fece931fb75e)
++++ src/main/java/com/murex/retail/experience/Mouse.java	(date 1583246712283)
+@@ -12,9 +12,7 @@
+ 
+     public static class MouseBuilder extends ComputerComponent.Builder
+     {
+-        @Column(name = "DIMENSION")
+         private String dimension;
+-        @Column(name = "COLOUR")
+         private String colour;
+ 
+         public MouseBuilder() {
+@@ -61,7 +59,11 @@
+         }
+ 
+     }
++
++
++    @Column(name = "DIMENSION")
+     private String dimension;
++    @Column(name = "COLOUR")
+     private String colour;
+ 
+     public Mouse(Mouse.MouseBuilder mouseBuilder) {
+Index: src/main/java/com/murex/retail/experience/Keyboard.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.murex.retail.experience;\r\n\r\nimport javax.persistence.Column;\r\nimport javax.persistence.Entity;\r\nimport java.util.UUID;\r\n\r\n@Entity\r\npublic class Keyboard extends ComputerComponent {\r\n\r\n    public Keyboard(){\r\n    }\r\n    public static class KeyboardBuilder extends ComputerComponent.Builder\r\n    {\r\n\r\n        private String dimension;\r\n        private String colour;\r\n\r\n        public KeyboardBuilder() {\r\n            super();\r\n\r\n        }\r\n\r\n        public Keyboard build(){\r\n            return new Keyboard(this);\r\n        }\r\n\r\n        public Keyboard.KeyboardBuilder UUiD(UUID UUiD){\r\n            super.UUiD=UUiD;\r\n            return this;\r\n        }\r\n        public KeyboardBuilder category(String category){\r\n            super.category=category;\r\n            return this;\r\n        }\r\n        public KeyboardBuilder name(String name){\r\n            super.name=name;\r\n            return this;\r\n        }\r\n        public KeyboardBuilder brand(String brand){\r\n            super.brand=brand;\r\n            return this;\r\n        }\r\n        public KeyboardBuilder price(int price){\r\n            super.price=price;\r\n            return this;\r\n        }\r\n        public KeyboardBuilder quantity(int quantity){\r\n            super.quantity=quantity;\r\n            return this;\r\n        }\r\n\r\n        public KeyboardBuilder dimension(String dimension){\r\n            this.dimension = dimension;\r\n            return this;\r\n        }\r\n        public KeyboardBuilder colour(String colour){\r\n            this.colour = colour;\r\n            return this;\r\n        }\r\n\r\n    }\r\n    @Column(name = \"DIMENSION\")\r\n    private String dimension;\r\n    @Column(name = \"COLOUR\")\r\n    private String colour;\r\n\r\n    public Keyboard(Keyboard.KeyboardBuilder keyboardBuilder) {\r\n        super(keyboardBuilder);\r\n        this.dimension = keyboardBuilder.dimension;\r\n        this.colour = keyboardBuilder.colour;\r\n\r\n    }\r\n    public String getDimension() {\r\n        return dimension;\r\n    }\r\n\r\n    public String getColour() {\r\n        return colour;\r\n    }\r\n    @Override\r\n    public String toString(){\r\n        return String.format(\"%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%d\\t%d\\n\", getUUiD(), getCategory(), getName(), getBrand(), getDimension(), getColour(), getPrice(), getQuantity());\r\n    }\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/murex/retail/experience/Keyboard.java	(revision 9a6de6260589d16cc6d252e2bb21fece931fb75e)
++++ src/main/java/com/murex/retail/experience/Keyboard.java	(date 1583246561092)
+@@ -24,7 +24,7 @@
+             return new Keyboard(this);
+         }
+ 
+-        public Keyboard.KeyboardBuilder UUiD(UUID UUiD){
++        public KeyboardBuilder UUiD(UUID UUiD){
+             super.UUiD=UUiD;
+             return this;
+         }
+Index: src/main/java/com/murex/retail/experience/Monitor.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.murex.retail.experience;\r\n\r\n\r\nimport javax.persistence.Column;\r\nimport javax.persistence.Entity;\r\nimport java.util.UUID;\r\n\r\n@Entity\r\npublic class Monitor extends ComputerComponent {\r\n\r\n    public Monitor(){\r\n    }\r\n\r\n\r\n    public static class MonitorBuilder extends ComputerComponent.Builder\r\n    {\r\n        @Column(name = \"DIMENSION\")\r\n        private String dimension;\r\n        @Column(name = \"COLOUR\")\r\n        private String colour;\r\n        @Column(name = \"RESOLUTION\")\r\n        private String resolution;\r\n\r\n        public MonitorBuilder() {\r\n            super();\r\n\r\n        }\r\n\r\n        public Monitor build(){\r\n            return new Monitor(this);\r\n        }\r\n\r\n        public Monitor.MonitorBuilder UUiD(UUID UUiD){\r\n            super.UUiD=UUiD;\r\n            return this;\r\n        }\r\n        public MonitorBuilder category(String category){\r\n            super.category=category;\r\n            return this;\r\n        }\r\n        public MonitorBuilder name(String name){\r\n            super.name=name;\r\n            return this;\r\n        }\r\n        public MonitorBuilder brand(String brand){\r\n            super.brand=brand;\r\n            return this;\r\n        }\r\n        public MonitorBuilder price(int price){\r\n            super.price=price;\r\n            return this;\r\n        }\r\n        public MonitorBuilder quantity(int quantity){\r\n            super.quantity=quantity;\r\n            return this;\r\n        }\r\n\r\n        public MonitorBuilder dimension(String dimension){\r\n            this.dimension = dimension;\r\n            return this;\r\n        }\r\n        public MonitorBuilder colour(String colour){\r\n            this.colour = colour;\r\n            return this;\r\n        }\r\n        public MonitorBuilder resolution(String resolution){\r\n            this.resolution = resolution;\r\n            return this;\r\n        }\r\n\r\n    }\r\n    private String dimension;\r\n    private String colour;\r\n    private String resolution;\r\n\r\n    public Monitor(Monitor.MonitorBuilder monitorBuilder) {\r\n        super(monitorBuilder);\r\n        this.dimension = monitorBuilder.dimension;\r\n        this.colour = monitorBuilder.colour;\r\n        this.resolution = monitorBuilder.resolution;\r\n\r\n    }\r\n\r\n    public String getDimension() {\r\n        return dimension;\r\n    }\r\n    public String getColour() {\r\n        return colour;\r\n    }\r\n    public String getResolution() {\r\n        return resolution;\r\n    }\r\n\r\n    @Override\r\n    public String toString(){\r\n        return String.format(\"%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%d\\t%d\\n\", getUUiD(), getCategory(), getName(), getBrand(), getDimension(), getResolution(), getColour(), getPrice(), getQuantity());\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/murex/retail/experience/Monitor.java	(revision 9a6de6260589d16cc6d252e2bb21fece931fb75e)
++++ src/main/java/com/murex/retail/experience/Monitor.java	(date 1583246712299)
+@@ -14,11 +14,10 @@
+ 
+     public static class MonitorBuilder extends ComputerComponent.Builder
+     {
+-        @Column(name = "DIMENSION")
++
++
+         private String dimension;
+-        @Column(name = "COLOUR")
+         private String colour;
+-        @Column(name = "RESOLUTION")
+         private String resolution;
+ 
+         public MonitorBuilder() {
+@@ -69,8 +68,12 @@
+         }
+ 
+     }
++
++    @Column(name = "DIMENSION")
+     private String dimension;
++    @Column(name = "COLOUR")
+     private String colour;
++    @Column(name = "RESOLUTION")
+     private String resolution;
+ 
+     public Monitor(Monitor.MonitorBuilder monitorBuilder) {
+Index: src/main/java/com/murex/retail/experience/ComputerComponent.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.murex.retail.experience;\r\n\r\nimport javax.persistence.*;\r\nimport java.util.Objects;\r\n\r\n@Entity\r\n@Table\r\npublic class ComputerComponent {\r\n\r\n    public static class Builder\r\n    {\r\n\r\n        protected UUID UUiD;\r\n        protected String category;\r\n        protected String name;\r\n        protected String brand;\r\n        protected int price;\r\n        protected int quantity;\r\n\r\n        public Builder(){\r\n        }\r\n    }\r\n    private static final String NOT_APPLICABLE = \"N/A\";\r\n\r\n    @Id\r\n    @Column(name = \"UUiD\", nullable = false)\r\n    private UUID UUiD;\r\n    @Column(name = \"CATEGORY\", nullable = false)\r\n    private String category;\r\n    @Column(name = \"NAME\", nullable = false)\r\n    private String name;\r\n    @Column(name = \"BRAND\", nullable = false)\r\n    private String brand;\r\n    @Column(name = \"PRICE\", nullable = false)\r\n    private int price;\r\n    @Column(name = \"QUANTITY\", nullable = false)\r\n    private int quantity;\r\n\r\n    public ComputerComponent(){\r\n\r\n    }\r\n    public ComputerComponent(Builder builder){\r\n        this.UUiD = builder.UUiD;\r\n        this.category = builder.category;\r\n        this.name = builder.name;\r\n        this.brand = builder.brand;\r\n        this.price = builder.price;\r\n        this.quantity = builder.quantity;\r\n    }\r\n\r\n    public UUID getUUiD() {\r\n        return UUiD;\r\n    }\r\n    public String getCategory() {\r\n        return category;\r\n    }\r\n    public String getName() {\r\n        return name;\r\n    }\r\n    public String getBrand() {\r\n        return brand;\r\n    }\r\n    public int getPrice() {\r\n        return price;\r\n    }\r\n    public int getQuantity() {\r\n        return quantity;\r\n    }\r\n\r\n\r\n    @Override\r\n    public String toString(){\r\n        return String.format(\"%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%d\\t%d\\n\",  UUiD, category, name, brand, getProductLine(), getNumOfCores(), getProcessorClockSpeed(), getGraphicClockSpeed(), getDimension(), getResolution(), getColour(), getIntrfce(), getSize(), price, quantity);\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/murex/retail/experience/ComputerComponent.java	(revision 9a6de6260589d16cc6d252e2bb21fece931fb75e)
++++ src/main/java/com/murex/retail/experience/ComputerComponent.java	(date 1583246264304)
+@@ -2,6 +2,7 @@
+ 
+ import javax.persistence.*;
+ import java.util.Objects;
++import java.util.UUID;
+ 
+ @Entity
+ @Table
+@@ -66,10 +67,4 @@
+     public int getQuantity() {
+         return quantity;
+     }
+-
+-
+-    @Override
+-    public String toString(){
+-        return String.format("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%d\t%d\n",  UUiD, category, name, brand, getProductLine(), getNumOfCores(), getProcessorClockSpeed(), getGraphicClockSpeed(), getDimension(), getResolution(), getColour(), getIntrfce(), getSize(), price, quantity);
+-    }
+ }
+\ No newline at end of file
+Index: src/main/java/com/murex/retail/experience/Memory.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.murex.retail.experience;\r\n\r\nimport javax.persistence.Column;\r\nimport javax.persistence.Entity;\r\nimport java.util.UUID;\r\n\r\n@Entity\r\npublic class Memory extends ComputerComponent{\r\n\r\n    public Memory(){\r\n    }\r\n    public static class MemoryBuilder extends ComputerComponent.Builder\r\n    {\r\n        @Column(name = \"INTERFACE\")\r\n        private String intrfce;\r\n        @Column(name = \"SIZE\")\r\n        private String size;\r\n\r\n        public MemoryBuilder() {\r\n            super();\r\n\r\n        }\r\n\r\n        public Memory build(){\r\n            return new Memory(this);\r\n        }\r\n\r\n\r\n        public Memory.MemoryBuilder UUiD(UUID UUiD){\r\n            super.UUiD=UUiD;\r\n            return this;\r\n        }\r\n        public MemoryBuilder category(String category){\r\n            super.category=category;\r\n            return this;\r\n        }\r\n        public MemoryBuilder name(String name){\r\n            super.name=name;\r\n            return this;\r\n        }\r\n        public MemoryBuilder brand(String brand){\r\n            super.brand=brand;\r\n            return this;\r\n        }\r\n        public MemoryBuilder price(int price){\r\n            super.price=price;\r\n            return this;\r\n        }\r\n        public MemoryBuilder quantity(int quantity){\r\n            super.quantity=quantity;\r\n            return this;\r\n        }\r\n\r\n        public MemoryBuilder intrfce(String intrfce){\r\n            this.intrfce = intrfce;\r\n            return this;\r\n        }\r\n        public MemoryBuilder size(String size){\r\n            this.size = size;\r\n            return this;\r\n        }\r\n\r\n    }\r\n    private String intrfce;\r\n    private String size;\r\n\r\n    public Memory(Memory.MemoryBuilder memoryBuilder) {\r\n        super(memoryBuilder);\r\n        this.intrfce = memoryBuilder.intrfce;\r\n        this.size = memoryBuilder.size;\r\n\r\n    }\r\n\r\n    @Override\r\n    public String getIntrfce() {\r\n        return intrfce;\r\n    }\r\n\r\n    public String getSize() {\r\n        return size;\r\n    }\r\n    @Override\r\n    public String toString(){\r\n        return String.format(\"%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%d\\t%d\\n\", getUUiD(), getCategory(), getName(), getBrand(), getIntrfce(), getSize(), getPrice(), getQuantity());\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/murex/retail/experience/Memory.java	(revision 9a6de6260589d16cc6d252e2bb21fece931fb75e)
++++ src/main/java/com/murex/retail/experience/Memory.java	(date 1583246561062)
+@@ -11,11 +11,10 @@
+     }
+     public static class MemoryBuilder extends ComputerComponent.Builder
+     {
+-        @Column(name = "INTERFACE")
++
++
+         private String intrfce;
+-        @Column(name = "SIZE")
+         private String size;
+-
+         public MemoryBuilder() {
+             super();
+ 
+@@ -61,9 +60,12 @@
+         }
+ 
+     }
++    @Column(name = "INTERFACE")
+     private String intrfce;
++    @Column(name = "SIZE")
+     private String size;
+ 
++
+     public Memory(Memory.MemoryBuilder memoryBuilder) {
+         super(memoryBuilder);
+         this.intrfce = memoryBuilder.intrfce;
+@@ -71,7 +73,6 @@
+ 
+     }
+ 
+-    @Override
+     public String getIntrfce() {
+         return intrfce;
+     }
+Index: src/main/java/com/murex/retail/experience/CPU.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.murex.retail.experience;\r\n\r\n\r\nimport javax.persistence.Column;\r\nimport javax.persistence.Entity;\r\nimport java.util.UUID;\r\n\r\n@Entity\r\npublic class CPU extends ComputerComponent {\r\n\r\n    public CPU(){\r\n    }\r\n\r\n    public static class CPUBuilder extends ComputerComponent.Builder\r\n    {\r\n        private String productLine;\r\n        private String numOfCores;\r\n        private String processorClockSpeed;\r\n        private String graphicClockSpeed;\r\n\r\n        public CPUBuilder() {\r\n            super();\r\n        }\r\n\r\n        public CPU build(){\r\n            return new CPU(this);\r\n        }\r\n\r\n        public CPUBuilder UUiD(UUID UUiD){\r\n            super.UUiD=UUiD;\r\n            return this;\r\n        }\r\n        public CPUBuilder category(String category){\r\n            super.category=category;\r\n            return this;\r\n        }\r\n        public CPUBuilder name(String name){\r\n            super.name=name;\r\n            return this;\r\n        }\r\n        public CPUBuilder brand(String brand){\r\n            super.brand=brand;\r\n            return this;\r\n        }\r\n        public CPUBuilder price(int price){\r\n            super.price=price;\r\n            return this;\r\n        }\r\n        public CPUBuilder quantity(int quantity){\r\n            super.quantity=quantity;\r\n            return this;\r\n        }\r\n\r\n        public CPUBuilder productLine(String productLine){\r\n            this.productLine = productLine;\r\n            return this;\r\n        }\r\n        public CPUBuilder numOfCores(String numOfCores){\r\n            this.numOfCores = numOfCores;\r\n            return this;\r\n        }\r\n        public CPUBuilder processorClockSpeed(String processorClockSpeed){\r\n            this.processorClockSpeed = processorClockSpeed;\r\n            return this;\r\n        }\r\n        public CPUBuilder graphicClockSpeed(String graphicClockSpeed){\r\n            this.graphicClockSpeed = graphicClockSpeed;\r\n            return this;\r\n        }\r\n    }\r\n\r\n    @Column(name = \"PRODUCTLINE\")\r\n    private String productLine;\r\n    @Column(name = \"NUMOFCORES\")\r\n    private String numOfCores;\r\n    @Column(name = \"PROCESSORCLOCKSPEED\")\r\n    private String processorClockSpeed;\r\n    @Column(name = \"GRAPHICCLOCKSPEED\")\r\n    private String graphicClockSpeed;\r\n\r\n    public CPU(CPUBuilder cpuBuilder) {\r\n        super(cpuBuilder);\r\n\r\n        this.productLine = cpuBuilder.productLine;\r\n        this.numOfCores = cpuBuilder.numOfCores;\r\n        this.processorClockSpeed = cpuBuilder.processorClockSpeed;\r\n        this.graphicClockSpeed = cpuBuilder.graphicClockSpeed;\r\n    }\r\n\r\n\r\n    public String getProductLine() {\r\n        return productLine;\r\n    }\r\n\r\n    public String getNumOfCores() {\r\n        return numOfCores;\r\n    }\r\n\r\n    public String getProcessorClockSpeed() {\r\n        return processorClockSpeed;\r\n    }\r\n\r\n\r\n    public String getGraphicClockSpeed() {\r\n        return graphicClockSpeed;\r\n    }\r\n\r\n    public String toString(){\r\n        return String.format(\"%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%d\\t%d\\n\", getUUiD(), getCategory(), getName(), getBrand(), getProductLine(), getNumOfCores(), getProcessorClockSpeed(), getGraphicClockSpeed(), getPrice(), getQuantity());\r\n    }\r\n\r\n    @Override\r\n    public boolean equals(Object o) {\r\n        if (this == o) return true;\r\n        if (!(o instanceof CPU)) return false;\r\n        if (!super.equals(o)) return false;\r\n        CPU cpu = (CPU) o;\r\n        return Objects.equals(productLine, cpu.productLine) &&\r\n                Objects.equals(numOfCores, cpu.numOfCores) &&\r\n                Objects.equals(processorClockSpeed, cpu.processorClockSpeed) &&\r\n                Objects.equals(graphicClockSpeed, cpu.graphicClockSpeed);\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/murex/retail/experience/CPU.java	(revision 9a6de6260589d16cc6d252e2bb21fece931fb75e)
++++ src/main/java/com/murex/retail/experience/CPU.java	(date 1583246264281)
+@@ -3,6 +3,7 @@
+ 
+ import javax.persistence.Column;
+ import javax.persistence.Entity;
++import java.util.Objects;
+ import java.util.UUID;
+ 
+ @Entity
+Index: src/test/java/com/murex/retail/experience/CPUTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.murex.retail.experience;\r\n\r\nimport static org.junit.jupiter.api.Assertions.assertEquals;\r\nimport org.junit.jupiter.api.Test;\r\n\r\nimport java.util.UUID;\r\n\r\npublic class CPUTest {\r\n\r\n    @Test\r\n    void test_cpu_class_methods(){\r\n        CPU cpu = new CPU.CPUBuilder()\r\n                .id(0)\r\n                .UUiD(UUID.randomUUID())\r\n                .category(\"CPU\")\r\n                .name(\"a\")\r\n                .brand(\"b\")\r\n                .productLine(\"c\")\r\n                .numOfCores(\"d\")\r\n                .processorClockSpeed(\"e\")\r\n                .graphicClockSpeed(\"f\")\r\n                .price(2)\r\n                .quantity(2).build();\r\n        assertEquals(\"CPU\", cpu.getCategory());\r\n        assertEquals(\"a\", cpu.getName());\r\n        assertEquals(\"b\", cpu.getBrand());\r\n        assertEquals(\"c\", cpu.getProductLine());\r\n        assertEquals(\"d\", cpu.getNumOfCores());\r\n        assertEquals(\"e\", cpu.getProcessorClockSpeed());\r\n        assertEquals(\"f\", cpu.getGraphicClockSpeed());\r\n        assertEquals(2, cpu.getPrice());\r\n        assertEquals(2, cpu.getQuantity());\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/com/murex/retail/experience/CPUTest.java	(revision 9a6de6260589d16cc6d252e2bb21fece931fb75e)
++++ src/test/java/com/murex/retail/experience/CPUTest.java	(date 1583246774980)
+@@ -10,7 +10,6 @@
+     @Test
+     void test_cpu_class_methods(){
+         CPU cpu = new CPU.CPUBuilder()
+-                .id(0)
+                 .UUiD(UUID.randomUUID())
+                 .category("CPU")
+                 .name("a")

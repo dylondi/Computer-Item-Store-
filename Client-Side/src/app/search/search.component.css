@@ -1,0 +1,198 @@
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.custab{
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 10% 0;
+    box-shadow: 3px 3px 2px #ccc;
+    transition: 0.5s;
+    }
+.custab:hover{
+    box-shadow: 3px 3px 0px transparent;
+    transition: 0.5s;
+    }
+
+   .table{
+     margin:5px;
+     border-collapse: collapse;
+     width: 100%;
+   }
+
+
+#custom-search-input {
+  margin:0;
+  margin-top: 24px;
+  padding: 2px;
+}
+.col-md-12 {
+  width: 62%;
+}
+#custom-search-input .search-query {
+  padding-right: 3px;
+  padding-right: 4px \9;
+  padding-left: 20px;
+  padding-left: 4px \9;
+  /* IE7-8 doesn't have border-radius, so don't indent the padding */
+
+  margin-bottom: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 43px;
+}
+
+#custom-search-input button {
+  border: 0;
+  background: none;
+  /** belows styles are working good */
+  padding: 2px 1px;
+  margin-top: 2px;
+  position: relative;
+  left: -28px;
+  /* IE7-8 doesn't have border-radius, so don't indent the padding */
+  margin-bottom: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  color:#44c767;
+  outline:0;
+}
+td { white-space:pre }
+.search-query:focus + button {
+  z-index: 3;  
+}
+.input-group {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+  padding-right: 0px;
+  padding-left: 183px;
+}
+
+#custom-search-input .myButton {
+	background-color:#44c767;
+	border-radius:20px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:14.5px;
+	padding:0.2px 20px;
+	text-decoration:none;
+  text-shadow:0px 1px 0px #2f6627;
+  position: relative;
+  left: 10px;
+  bottom: 1px;
+
+
+}
+#custom-search-input .myButton:hover {
+	background-color:#3aad00;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+th{
+  width: 94px;
+}
+
+ td {
+  overflow: hidden;
+  width: 94px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+td:empty::before{
+  color: #808080;
+  content: "-";
+  display: block;
+  position: absolute;
+}
+
+img { 
+  width: 185px;
+  position:absolute;
+  transition: .5s ease;
+  top: 5%;
+  left: 80%;
+}
+
+#cart{
+  width:80px;
+  position: relative;
+  display:inline-block;
+  margin-left: 10px;
+  bottom: 30px;
+
+}
+#cart:focus{
+  outline: none;
+}
+
+.jumbotron{
+  background-image:linear-gradient(to bottom right, #28ffbe3a, rgba(70, 212, 255, 0.233));
+}
+
+#testDiv, #btnDiv, #btnDiv2{
+  float: left;
+}
+
+input{
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,.5);
+  padding-left: 5px;
+}
+
+.addRemove:hover,
+.addRemove:focus{
+  background: #ab187a4b;
+  color: #ffffff;
+}
+
+
+input[type=number]{
+  width: 50px;
+}
+
+
+
+.addToCart {
+	background-color:#44c767;
+	border-radius:20px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	padding:0.2px 5px;
+	text-decoration:none;
+  text-shadow:0px 1px 0px #2f6627;
+  position: relative;
+  left: -5px;
+  bottom: 1px;
+  outline:0;
+
+
+}
+.addToCart:hover {
+	background-color:#3aad00;
+}
+.addToCart:active {
+	position:relative;
+	top:1px;
+}
+

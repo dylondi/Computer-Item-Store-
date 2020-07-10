@@ -1,0 +1,30 @@
+Index: src/main/java/com/murex/retail/experience/inventory/InventoryController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.murex.retail.experience.inventory;\r\n\r\nimport com.murex.retail.experience.Main;\r\nimport com.murex.retail.experience.components.ComputerComponent;\r\nimport com.murex.retail.experience.persistence.Reader;\r\nimport org.springframework.web.bind.annotation.*;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\nimport java.util.Map;\r\nimport java.util.UUID;\r\n\r\n@RestController\r\npublic class InventoryController {\r\n\r\n    @GetMapping(\"/item_count\")\r\n    public int returnNumberOfItems(){\r\n        Map<UUID, ComputerComponent> map = Main.map;\r\n        Reader reader = new Reader();\r\n        reader.getNumOfItems(map);\r\n        return reader.getNumOfItems(map);\r\n    }\r\n\r\n    @GetMapping(\"/search\")\r\n    public List<ComputerComponent> searchForComponent(@RequestParam(value = \"name\") String name){\r\n        Reader reader = new Reader();\r\n        ComputerComponent cc = reader.findComponent(Main.map, name);\r\n        List<ComputerComponent> list = new ArrayList<>();\r\n        ;list.add(cc);\r\n        return list;\r\n    }\r\n\r\n    @GetMapping(\"/list_items\")\r\n    public List<ComputerComponent> listAllComponents(){\r\n        return Main.list;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/murex/retail/experience/inventory/InventoryController.java	(revision fbc657efe8c38f086054401fbda46eb9f5ece23c)
++++ src/main/java/com/murex/retail/experience/inventory/InventoryController.java	(date 1583424886299)
+@@ -3,8 +3,10 @@
+ import com.murex.retail.experience.Main;
+ import com.murex.retail.experience.components.ComputerComponent;
+ import com.murex.retail.experience.persistence.Reader;
++import org.springframework.http.ResponseEntity;
+ import org.springframework.web.bind.annotation.*;
+ 
++import javax.validation.Valid;
+ import java.util.ArrayList;
+ import java.util.List;
+ import java.util.Map;
+@@ -34,4 +36,9 @@
+     public List<ComputerComponent> listAllComponents(){
+         return Main.list;
+     }
++
++    @PostMapping
++    public ResponseEntity getOrder(@Valid @RequestBody List<ComputerComponent> components){
++        return ResponseEntity.ok(cart)
++    }
+ }

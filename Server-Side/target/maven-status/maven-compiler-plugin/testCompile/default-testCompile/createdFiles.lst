@@ -1,0 +1,12 @@
+com\murex\retail\experience\ParserTest.class
+com\murex\retail\experience\CPUTest.class
+com\murex\retail\experience\AnalyserIntegrationTest.class
+com\murex\retail\experience\GPUTest.class
+com\murex\retail\experience\MouseTest.class
+com\murex\retail\experience\StorageTest.class
+com\murex\retail\experience\InventoryParserTest.class
+com\murex\retail\experience\MemoryTest.class
+com\murex\retail\experience\ComputerComponentTest.class
+com\murex\retail\experience\KeyboardTest.class
+com\murex\retail\experience\MonitorTest.class
+com\murex\retail\experience\ComputerComponentFactoryTest.class

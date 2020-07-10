@@ -1,0 +1,330 @@
+Index: src/main/java/com/murex/retail/experience/ComputerComponent.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.murex.retail.experience;\r\n\r\npublic class ComputerComponent {\r\n\r\n    public static class Builder\r\n    {\r\n        private String id;\r\n        private String category;\r\n        private String name;\r\n        private String brand;\r\n        private String productLine;\r\n        private String numOfCores;\r\n        private String processorClockSpeed;\r\n        private String graphicClockSpeed;\r\n        private String dimension;\r\n        private String resolution;\r\n        private String colour;\r\n        private String intrfce;\r\n        private String size;\r\n        private int price;\r\n        private int quantity;\r\n\r\n        public Builder(String id, String category, String name, int price, int quantity){\r\n            this.id = id;\r\n            this.category = category;\r\n            this.name = name;\r\n            this.price = price;\r\n            this.quantity = quantity;\r\n        }\r\n\r\n        public ComputerComponent build(){\r\n            return new ComputerComponent(this);\r\n        }\r\n\r\n        public Builder brand(String brand){\r\n            this.brand = brand;\r\n            return this;\r\n        }\r\n        public Builder productLine(String productLine){\r\n            this.productLine = productLine;\r\n            return this;\r\n        }\r\n        public Builder numOfCores(String numOfCores){\r\n            this.numOfCores = numOfCores;\r\n            return this;\r\n        }\r\n        public Builder processorClockSpeed(String processorClockSpeed){\r\n            this.processorClockSpeed = processorClockSpeed;\r\n            return this;\r\n        }\r\n        public Builder graphicClockSpeed(String graphicClockSpeed){\r\n            this.graphicClockSpeed = graphicClockSpeed;\r\n            return this;\r\n        }\r\n        public Builder dimension(String dimension){\r\n            this.dimension = dimension;\r\n            return this;\r\n        }\r\n        public Builder resolution(String resolution){\r\n            this.resolution = resolution;\r\n            return this;\r\n        }\r\n        public Builder colour(String colour){\r\n            this.colour = colour;\r\n            return this;\r\n        }\r\n        public Builder intrfce(String intrfce){\r\n            this.intrfce = intrfce;\r\n            return this;\r\n        }\r\n        public Builder size(String size){\r\n            this.size = size;\r\n            return this;\r\n        }\r\n    }\r\n    private final String id;\r\n    private final String category;\r\n    private final String name;\r\n    private final String productLine;\r\n    private final String brand;\r\n    private final String numOfCores;\r\n    private final String processorClockSpeed;\r\n    private final String graphicClockSpeed;\r\n    private final String dimension;\r\n    private final String resolution;\r\n    private final String colour;\r\n    private final String intrfce;\r\n    private final String size;\r\n    private final int price;\r\n    private final int quantity;\r\n\r\n    public ComputerComponent(Builder builder)\r\n    {\r\n        this.id = builder.id;\r\n        this.category = builder.category;\r\n        this.name = builder.name;\r\n        this.brand = builder.brand;\r\n        this.productLine = builder.productLine;\r\n        this.numOfCores = builder.numOfCores;\r\n        this.processorClockSpeed = builder.processorClockSpeed;\r\n        this.graphicClockSpeed = builder.graphicClockSpeed;\r\n        this.dimension = builder.dimension;\r\n        this.resolution = builder.resolution;\r\n        this.colour = builder.colour;\r\n        this.intrfce = builder.intrfce;\r\n        this.size = builder.size;\r\n        this.price = builder.price;\r\n        this.quantity = builder.quantity;\r\n    }\r\n    public String getId() {\r\n        return id;\r\n    }\r\n    public String getCategory() {\r\n        return category;\r\n    }\r\n    public String getName() {\r\n        return name;\r\n    }\r\n    public String getBrand() {\r\n        return brand;\r\n    }\r\n    public String getProductLine() {\r\n        return productLine;\r\n    }\r\n    public String getNumOfCores() {\r\n        return numOfCores;\r\n    }\r\n    public String getProcessorClockSpeed() {\r\n        return processorClockSpeed;\r\n    }\r\n    public String getGraphicClockSpeed() {\r\n        return graphicClockSpeed;\r\n    }\r\n    public String getDimension() {\r\n        return dimension;\r\n    }\r\n    public String getResolution() {\r\n        return resolution;\r\n    }\r\n    public String getSize() {\r\n        return size;\r\n    }\r\n    public String getColour() {\r\n        return colour;\r\n    }\r\n    public String getIntrfce() {\r\n        return intrfce;\r\n    }\r\n    public int getPrice() {\r\n        return price;\r\n    }\r\n    public int getQuantity() {\r\n        return quantity;\r\n    }\r\n\r\n    @Override\r\n    public String toString(){\r\n        return String.format(\"%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%d\\t%d\\n\", id , category, name, brand, productLine, numOfCores, processorClockSpeed, graphicClockSpeed, dimension, resolution, colour, intrfce, size, price, quantity);\r\n    }\r\n\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/murex/retail/experience/ComputerComponent.java	(revision 99954d2418588ce6efb1ae4496139b68887bfbd8)
++++ src/main/java/com/murex/retail/experience/ComputerComponent.java	(date 1581419316767)
+@@ -1,112 +1,133 @@
+ package com.murex.retail.experience;
+ 
+-public class ComputerComponent {
++import java.util.ArrayList;
++import java.util.Comparator;
++import java.util.List;
+ 
+-    public static class Builder
+-    {
+-        private String id;
+-        private String category;
+-        private String name;
+-        private String brand;
+-        private String productLine;
+-        private String numOfCores;
+-        private String processorClockSpeed;
+-        private String graphicClockSpeed;
+-        private String dimension;
+-        private String resolution;
+-        private String colour;
+-        private String intrfce;
+-        private String size;
+-        private int price;
+-        private int quantity;
++public abstract class ComputerComponent {
++
++    private static final String NOT_APPLICABLE = "N/A";
++    private String id;
++    private String category;
++    private String name;
++    private String brand;
++    private int price;
++    private int quantity;
+ 
+-        public Builder(String id, String category, String name, int price, int quantity){
+-            this.id = id;
+-            this.category = category;
+-            this.name = name;
+-            this.price = price;
+-            this.quantity = quantity;
+-        }
++    public ComputerComponent(String id, String category, String name, String brand, int price, int quantity){
++        this.id = id;
++        this.category = category;
++        this.name = name;
++        this.brand = brand;
++        this.price = price;
++        this.quantity = quantity;
++    }
+ 
+-        public ComputerComponent build(){
+-            return new ComputerComponent(this);
+-        }
+-
+-        public Builder brand(String brand){
+-            this.brand = brand;
+-            return this;
+-        }
+-        public Builder productLine(String productLine){
+-            this.productLine = productLine;
+-            return this;
+-        }
+-        public Builder numOfCores(String numOfCores){
+-            this.numOfCores = numOfCores;
+-            return this;
+-        }
+-        public Builder processorClockSpeed(String processorClockSpeed){
+-            this.processorClockSpeed = processorClockSpeed;
+-            return this;
+-        }
+-        public Builder graphicClockSpeed(String graphicClockSpeed){
+-            this.graphicClockSpeed = graphicClockSpeed;
+-            return this;
+-        }
+-        public Builder dimension(String dimension){
+-            this.dimension = dimension;
+-            return this;
+-        }
+-        public Builder resolution(String resolution){
+-            this.resolution = resolution;
+-            return this;
+-        }
+-        public Builder colour(String colour){
+-            this.colour = colour;
+-            return this;
+-        }
+-        public Builder intrfce(String intrfce){
+-            this.intrfce = intrfce;
+-            return this;
+-        }
+-        public Builder size(String size){
+-            this.size = size;
+-            return this;
+-        }
+-    }
+-    private final String id;
+-    private final String category;
+-    private final String name;
+-    private final String productLine;
+-    private final String brand;
+-    private final String numOfCores;
+-    private final String processorClockSpeed;
+-    private final String graphicClockSpeed;
+-    private final String dimension;
+-    private final String resolution;
+-    private final String colour;
+-    private final String intrfce;
+-    private final String size;
+-    private final int price;
+-    private final int quantity;
+-
+-    public ComputerComponent(Builder builder)
+-    {
+-        this.id = builder.id;
+-        this.category = builder.category;
+-        this.name = builder.name;
+-        this.brand = builder.brand;
+-        this.productLine = builder.productLine;
+-        this.numOfCores = builder.numOfCores;
+-        this.processorClockSpeed = builder.processorClockSpeed;
+-        this.graphicClockSpeed = builder.graphicClockSpeed;
+-        this.dimension = builder.dimension;
+-        this.resolution = builder.resolution;
+-        this.colour = builder.colour;
+-        this.intrfce = builder.intrfce;
+-        this.size = builder.size;
+-        this.price = builder.price;
+-        this.quantity = builder.quantity;
+-    }
++//    public static class Builder
++//    {
++//        private String id;
++//        private String category;
++//        private String name;
++//        private String brand;
++//        private String productLine;
++//        private String numOfCores;
++//        private String processorClockSpeed;
++//        private String graphicClockSpeed;
++//        private String dimension;
++//        private String resolution;
++//        private String colour;
++//        private String intrfce;
++//        private String size;
++//        private int price;
++//        private int quantity;
++//
++//        public Builder(String id, String category, String name, int price, int quantity){
++//            this.id = id;
++//            this.category = category;
++//            this.name = name;
++//            this.price = price;
++//            this.quantity = quantity;
++//        }
++//
++//        public ComputerComponent build(){
++//            return new ComputerComponent(this);
++//        }
++//
++//        public Builder brand(String brand){
++//            this.brand = brand;
++//            return this;
++//        }
++//        public Builder productLine(String productLine){
++//            this.productLine = productLine;
++//            return this;
++//        }
++//        public Builder numOfCores(String numOfCores){
++//            this.numOfCores = numOfCores;
++//            return this;
++//        }
++//        public Builder processorClockSpeed(String processorClockSpeed){
++//            this.processorClockSpeed = processorClockSpeed;
++//            return this;
++//        }
++//        public Builder graphicClockSpeed(String graphicClockSpeed){
++//            this.graphicClockSpeed = graphicClockSpeed;
++//            return this;
++//        }
++//        public Builder dimension(String dimension){
++//            this.dimension = dimension;
++//            return this;
++//        }
++//        public Builder resolution(String resolution){
++//            this.resolution = resolution;
++//            return this;
++//        }
++//        public Builder colour(String colour){
++//            this.colour = colour;
++//            return this;
++//        }
++//        public Builder intrfce(String intrfce){
++//            this.intrfce = intrfce;
++//            return this;
++//        }
++//        public Builder size(String size){
++//            this.size = size;
++//            return this;
++//        }
++//    }
++//    private final String id;
++//    private final String category;
++//    private final String name;
++//    private final String productLine;
++//    private final String brand;
++//    private final String numOfCores;
++//    private final String processorClockSpeed;
++//    private final String graphicClockSpeed;
++//    private final String dimension;
++//    private final String resolution;
++//    private final String colour;
++//    private final String intrfce;
++//    private final String size;
++//    private final int price;
++//    private final int quantity;
++//
++//    public ComputerComponent(Builder builder)
++//    {
++//        this.id = builder.id;
++//        this.category = builder.category;
++//        this.name = builder.name;
++//        this.brand = builder.brand;
++//        this.productLine = builder.productLine;
++//        this.numOfCores = builder.numOfCores;
++//        this.processorClockSpeed = builder.processorClockSpeed;
++//        this.graphicClockSpeed = builder.graphicClockSpeed;
++//        this.dimension = builder.dimension;
++//        this.resolution = builder.resolution;
++//        this.colour = builder.colour;
++//        this.intrfce = builder.intrfce;
++//        this.size = builder.size;
++//        this.price = builder.price;
++//        this.quantity = builder.quantity;
++//    }
+     public String getId() {
+         return id;
+     }
+@@ -120,31 +141,31 @@
+         return brand;
+     }
+     public String getProductLine() {
+-        return productLine;
++        return NOT_APPLICABLE;
+     }
+     public String getNumOfCores() {
+-        return numOfCores;
++        return NOT_APPLICABLE;
+     }
+     public String getProcessorClockSpeed() {
+-        return processorClockSpeed;
++        return NOT_APPLICABLE;
+     }
+     public String getGraphicClockSpeed() {
+-        return graphicClockSpeed;
++        return NOT_APPLICABLE;
+     }
+     public String getDimension() {
+-        return dimension;
++        return NOT_APPLICABLE;
+     }
+     public String getResolution() {
+-        return resolution;
++        return NOT_APPLICABLE;
+     }
+     public String getSize() {
+-        return size;
++        return NOT_APPLICABLE;
+     }
+     public String getColour() {
+-        return colour;
++        return NOT_APPLICABLE;
+     }
+     public String getIntrfce() {
+-        return intrfce;
++        return NOT_APPLICABLE;
+     }
+     public int getPrice() {
+         return price;
+Index: src/test/java/com/murex/retail/experience/AnalyserTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.murex.retail.experience;\r\n\r\nimport org.junit.jupiter.api.BeforeEach;\r\nimport org.junit.jupiter.api.Test;\r\nimport java.util.Arrays;\r\nimport java.util.List;\r\n\r\nimport static org.junit.jupiter.api.Assertions.assertEquals;\r\n\r\npublic class AnalyserTest {\r\n    Analyser analyser;\r\n    InventoryParser inventoryParser;\r\n    List<String> testData;\r\n    List<String> testData2;\r\n    @BeforeEach\r\n    public void setUp(){\r\n         analyser = new Analyser();\r\n         inventoryParser = new InventoryParser();\r\n        testData = (Arrays.asList(\"dummy, line, test,a,s,d,f,g,h,j,k,l,o,i,u\",\"a,CPU,c,d,e,f,g,h,i,j,k,l,m,3,3\",\r\n                \"a,CPU,b,d,g,h,d,t,g,f,s,f,n,2,4\",\r\n                \"a,CPU,b,d,g,h,d,t,g,f,s,f,n,4,4\",\r\n                \"a,c,a,d,g,h,d,t,g,f,s,f,n,1,4\",\r\n                \"a,a,b,d,g,h,d,t,g,f,s,f,n,6,4\"));\r\n        testData2 = (Arrays.asList(\"dummy, line, test,a,s,d,f,g,h,j,k,l,o,i,u\",\"0,CPU,c,Intel,e,f,g,h,i,j,k,l,m,2,3\",\r\n                \"1,CPU,b,AMD,g,h,d,t,g,f,s,f,n,5,4\",\r\n                \"2,Monitor,b,Sony,g,h,d,t,g,f,s,f,n,4,4\",\r\n                \"3,Monitor,a,Sony,g,h,d,t,g,f,s,f,n,1,4\",\r\n                \"4,Keyboard,b,Samsung,g,h,d,t,g,f,s,f,n,6,4\"));\r\n    }\r\n    @Test\r\n    void test_sort_and_print_method(){\r\n        List<String> test = (Arrays.asList(\"dummy, line, test,a,s,d,f,g,h,j,k,l,o,i,u\",\"a,b,c,d,e,f,g,h,i,j,k,l,m,2,3\",\r\n                \"a,b,b,d,g,h,d,t,g,f,s,f,n,3,4\",\r\n                \"a,c,b,d,g,h,d,t,g,f,s,f,n,3,4\",\r\n                \"a,c,a,d,g,h,d,t,g,f,s,f,n,1,4\",\r\n                \"a,a,b,d,g,h,d,t,g,f,s,f,n,3,4\",\r\n                \"a,a,b,d,g,h,d,t,g,f,s,f,n,3,4\",\r\n                \"a,a,b,d,g,h,d,t,g,f,s,f,n,3,4\",\r\n                \"a,a,b,d,g,h,d,t,g,f,s,f,n,3,4\",\r\n                \"a,a,b,d,g,h,d,t,g,f,s,f,n,3,4\",\r\n                \"a,a,b,d,g,h,d,t,g,f,s,f,n,3,4\"));\r\n\r\n        Inventory inventory = new Inventory(inventoryParser.createObjects(test));\r\n        String actualResult = (analyser.sortAndPrint(inventory)).toString();\r\n        String expectedResult = \"[a\\ta\\tb\\td\\tg\\th\\td\\tt\\tg\\tf\\ts\\tf\\tn\\t3\\t4\\n\" +\r\n                \", a\\ta\\tb\\td\\tg\\th\\td\\tt\\tg\\tf\\ts\\tf\\tn\\t3\\t4\\n\" +\r\n                \", a\\ta\\tb\\td\\tg\\th\\td\\tt\\tg\\tf\\ts\\tf\\tn\\t3\\t4\\n\" +\r\n                \", a\\ta\\tb\\td\\tg\\th\\td\\tt\\tg\\tf\\ts\\tf\\tn\\t3\\t4\\n\" +\r\n                \", a\\ta\\tb\\td\\tg\\th\\td\\tt\\tg\\tf\\ts\\tf\\tn\\t3\\t4\\n\" +\r\n                \", a\\ta\\tb\\td\\tg\\th\\td\\tt\\tg\\tf\\ts\\tf\\tn\\t3\\t4\\n\" +\r\n                \", a\\tb\\tb\\td\\tg\\th\\td\\tt\\tg\\tf\\ts\\tf\\tn\\t3\\t4\\n\" +\r\n                \", a\\tb\\tc\\td\\te\\tf\\tg\\th\\ti\\tj\\tk\\tl\\tm\\t2\\t3\\n\" +\r\n                \", a\\tc\\ta\\td\\tg\\th\\td\\tt\\tg\\tf\\ts\\tf\\tn\\t1\\t4\\n\" +\r\n                \", a\\tc\\tb\\td\\tg\\th\\td\\tt\\tg\\tf\\ts\\tf\\tn\\t3\\t4\\n\" +\r\n                \"]\";\r\n        assertEquals(expectedResult, actualResult);\r\n    }\r\n\r\n    @Test\r\n    void test_sort_and_print_method_less_than_10(){\r\n        List<String> test = (Arrays.asList(\"dummy, line, test,a,s,d,f,g,h,j,k,l,o,i,u\",\"a,b,c,d,e,f,g,h,i,j,k,l,m,2,3\",\r\n                \"a,b,b,d,g,h,d,t,g,f,s,f,n,3,4\",\r\n                \"a,a,b,d,g,h,d,t,g,f,s,f,n,3,4\",\r\n                \"a,a,b,d,g,h,d,t,g,f,s,f,n,3,4\",\r\n                \"a,a,b,d,g,h,d,t,g,f,s,f,n,3,4\",\r\n                \"a,a,b,d,g,h,d,t,g,f,s,f,n,3,4\",\r\n                \"a,a,b,d,g,h,d,t,g,f,s,f,n,3,4\",\r\n                \"a,a,b,d,g,h,d,t,g,f,s,f,n,3,4\"));\r\n        Inventory inventory = new Inventory(inventoryParser.createObjects(test));\r\n        String actualResult = (analyser.sortAndPrint(inventory)).toString();\r\n        String expectedResult = \"[a\\ta\\tb\\td\\tg\\th\\td\\tt\\tg\\tf\\ts\\tf\\tn\\t3\\t4\\n\" +\r\n                \", a\\ta\\tb\\td\\tg\\th\\td\\tt\\tg\\tf\\ts\\tf\\tn\\t3\\t4\\n\" +\r\n                \", a\\ta\\tb\\td\\tg\\th\\td\\tt\\tg\\tf\\ts\\tf\\tn\\t3\\t4\\n\" +\r\n                \", a\\ta\\tb\\td\\tg\\th\\td\\tt\\tg\\tf\\ts\\tf\\tn\\t3\\t4\\n\" +\r\n                \", a\\ta\\tb\\td\\tg\\th\\td\\tt\\tg\\tf\\ts\\tf\\tn\\t3\\t4\\n\" +\r\n                \", a\\ta\\tb\\td\\tg\\th\\td\\tt\\tg\\tf\\ts\\tf\\tn\\t3\\t4\\n\" +\r\n                \", a\\tb\\tb\\td\\tg\\th\\td\\tt\\tg\\tf\\ts\\tf\\tn\\t3\\t4\\n\" +\r\n                \", a\\tb\\tc\\td\\te\\tf\\tg\\th\\ti\\tj\\tk\\tl\\tm\\t2\\t3\\n\" +\r\n                \"]\";\r\n        assertEquals(expectedResult, actualResult);\r\n    }\r\n\r\n    @Test\r\n    void test_get_avg_price_method(){\r\n        Inventory inventory = new Inventory(inventoryParser.createObjects(testData));\r\n        int actualResult = analyser.computeAvgPriceOfAllComponents((inventory.getParsedInventory()));\r\n        assertEquals(3, actualResult);\r\n    }\r\n\r\n    @Test\r\n    void test_get_avg_price_of_cpu_components_method(){\r\n        Inventory inventory = new Inventory(inventoryParser.createObjects(testData));\r\n        int actualResult = analyser.computeAvgPriceOfCPUComponents((inventory.getParsedInventory()));\r\n        assertEquals(3, actualResult);\r\n    }\r\n\r\n    @Test\r\n    void test_method_returning_cheapest_object_details(){\r\n        Inventory inventory = new Inventory(inventoryParser.createObjects(testData));\r\n        String actualResult = analyser.cheapestComponent((inventory.getParsedInventory()));\r\n        assertEquals(\"a\\tc\\ta\\td\\tg\\th\\td\\tt\\tg\\tf\\ts\\tf\\tn\\t1\\t4\\n\", actualResult);\r\n\r\n    }\r\n\r\n    @Test\r\n    void test_print_most_expensive_of_each_category(){\r\n        Inventory inventory = new Inventory(inventoryParser.createObjects(testData2));\r\n        String actualResult = analyser.getMostExpensiveOfEachCategory(inventory.getParsedInventory());\r\n        String expectedResult = \"{Monitor=Optional[2\\tMonitor\\tb\\tSony\\tg\\th\\td\\tt\\tg\\tf\\ts\\tf\\tn\\t4\\t4\\n\" +\r\n                \"], Keyboard=Optional[4\\tKeyboard\\tb\\tSamsung\\tg\\th\\td\\tt\\tg\\tf\\ts\\tf\\tn\\t6\\t4\\n\" +\r\n                \"], CPU=Optional[1\\tCPU\\tb\\tAMD\\tg\\th\\td\\tt\\tg\\tf\\ts\\tf\\tn\\t5\\t4\\n\" +\r\n                \"]}\";\r\n        assertEquals(expectedResult, actualResult);\r\n    }\r\n\r\n    @Test\r\n    void test_report_of_quantity_of_components_per_category(){\r\n        Inventory inventory = new Inventory(inventoryParser.createObjects(testData2));\r\n        String actualResult = analyser.reportOfQuantityOfComponentsByCategory(inventory.getParsedInventory());\r\n        String expectedResult = \"{Monitor=2, Keyboard=1, CPU=2}\";\r\n        assertEquals(expectedResult, actualResult);\r\n    }\r\n\r\n    @Test\r\n    void test_report_of_quantity_of_components_per_category_and_brand(){\r\n        Inventory inventory = new Inventory(inventoryParser.createObjects(testData2));\r\n        String actualResult = analyser.reportOfQuantityOfComponentsByCategoryAndBrand(inventory.getParsedInventory());\r\n        String expectedResult = \"{Monitor={Sony=2}, Keyboard={Samsung=1}, CPU={AMD=1, Intel=1}}\";\r\n        assertEquals(expectedResult, actualResult);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/com/murex/retail/experience/AnalyserTest.java	(revision 99954d2418588ce6efb1ae4496139b68887bfbd8)
++++ src/test/java/com/murex/retail/experience/AnalyserTest.java	(date 1581413159424)
+@@ -12,6 +12,7 @@
+     InventoryParser inventoryParser;
+     List<String> testData;
+     List<String> testData2;
++
+     @BeforeEach
+     public void setUp(){
+          analyser = new Analyser();
+@@ -128,4 +129,5 @@
+         String expectedResult = "{Monitor={Sony=2}, Keyboard={Samsung=1}, CPU={AMD=1, Intel=1}}";
+         assertEquals(expectedResult, actualResult);
+     }
++
+ }
+Index: src/test/java/com/murex/retail/experience/InventoryParserTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.murex.retail.experience;\r\n\r\nimport org.junit.jupiter.api.Assertions;\r\nimport org.junit.jupiter.api.Test;\r\n\r\nimport java.io.IOException;\r\nimport java.nio.file.NoSuchFileException;\r\nimport java.util.ArrayList;\r\nimport java.util.Arrays;\r\nimport java.util.List;\r\n\r\nimport static org.junit.jupiter.api.Assertions.assertEquals;\r\n\r\npublic class InventoryParserTest {\r\n    @Test\r\n    void test_create_object_method(){\r\n        List<String> test = (Arrays.asList(\"dummy, line, test,a,s,d,f,g,h,j,k,l,o,2,2\",\"a,b,c,d,e,f,g,h,i,j,k,l,m,2,3\"));\r\n        ComputerComponent cc = new ComputerComponent.Builder(\"a\",\"b\",\"c\",2, 3).brand(\"d\")\r\n                .productLine(\"e\")\r\n                .numOfCores(\"f\")\r\n                .processorClockSpeed(\"g\")\r\n                .graphicClockSpeed(\"h\")\r\n                .dimension(\"i\")\r\n                .resolution(\"j\")\r\n                .colour(\"k\")\r\n                .intrfce(\"l\")\r\n                .size(\"m\")\r\n                .build();\r\n        List<ComputerComponent> expectedResult = new ArrayList<ComputerComponent>();\r\n        expectedResult.add(cc);\r\n        InventoryParser inventoryParser= new InventoryParser();\r\n        List<ComputerComponent> actualResult = inventoryParser.createObjects(test);\r\n        assertEquals(expectedResult.toString(),actualResult.toString());\r\n    }\r\n\r\n    @Test\r\n    void test_wrong_number_of_columns_in_csv() throws IOException {\r\n        Parser testParse = new Parser(\"src/test/resources/test_file.csv\");\r\n        List<String> parsedCSV = testParse.readCSV();\r\n        InventoryParser inventoryParser = new InventoryParser();\r\n        Assertions.assertThrows(ArrayIndexOutOfBoundsException.class, () -> inventoryParser.createObjects(parsedCSV));\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/com/murex/retail/experience/InventoryParserTest.java	(revision 99954d2418588ce6efb1ae4496139b68887bfbd8)
++++ src/test/java/com/murex/retail/experience/InventoryParserTest.java	(date 1581352040512)
+@@ -2,9 +2,7 @@
+ 
+ import org.junit.jupiter.api.Assertions;
+ import org.junit.jupiter.api.Test;
+-
+ import java.io.IOException;
+-import java.nio.file.NoSuchFileException;
+ import java.util.ArrayList;
+ import java.util.Arrays;
+ import java.util.List;

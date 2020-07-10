@@ -1,0 +1,70 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="jquery.nice-number.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">My Basket</h1>
+      </div>
+  </div>
+  
+<div class="table">
+    <div>
+        <div class="row col-md-6  custyle">
+        <table class="table table-striped custab">
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Name</th>
+                <th>Brand</th>
+                <th>Product Line</th>
+                <th>Number Of Cores</th>
+                <th>Proc. Clock Speed</th>
+                <th>Graphic Clock Speed</th>
+                <th>Size</th>
+                <th>Dimension</th> 
+                <th>Interface</th>
+                <th>Colour</th>
+                <th>Resolution</th>
+                <th>Price</th>
+                <th>In Stock</th>
+                <th>ID</th>
+                <th>Quantity</th>
+                <th></th>
+    
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let computerComponent of items">
+                <td>{{computerComponent.category}}</td>
+                <td>{{computerComponent.name}}</td>
+                <td>{{computerComponent.brand}}</td>
+                <td>{{computerComponent.productLine}}</td>
+                <td>{{computerComponent.numOfCores}}</td>
+                <td>{{computerComponent.processorClockSpeed}}</td>
+                <td>{{computerComponent.graphicClockSpeed}}</td>
+                <td>{{computerComponent.size}}</td>
+                <td>{{computerComponent.dimension}}</td>
+                <td>{{computerComponent.intrfce}}</td>
+                <td>{{computerComponent.colour}}</td>
+                <td>{{computerComponent.resolution}}</td>
+                <td>{{computerComponent.price}}</td>
+                <td>{{computerComponent.quantity}}</td>
+                <td>{{computerComponent.uuid}}</td>
+                <td>{{computerComponent.numInBasket}}</td>
+                <td><div class="box"><button class="myButton" (click)="addToCart(computerComponent)" >Add</button></div><div class="box"><button class="removeFromCart" (click)="removeFromCart(computerComponent)" >Remove</button></div></td>
+            </tr>
+            <tr><td  colspan="17"><p id="totPrice">Total price: ${{getTotal()}}</p></td></tr>
+        </tbody>
+        </table>
+        <nav id="navBar">
+            <button class="myButton" [routerLink]="['/list_items']">Back</button>
+            <button class="myButton" id="checkoutBtn" [routerLink]="['/checkout']" (click)="collectOrder()">Checkout</button>
+          </nav>
+        </div>
+    </div>
+    </div>

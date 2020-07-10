@@ -1,0 +1,126 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .custab{
+      border: 1px solid #ccc;
+      padding: 5px;
+      margin: 10% 0;
+      box-shadow: 3px 3px 2px #ccc;
+      transition: 0.5s;
+      }
+  .custab:hover{
+      box-shadow: 3px 3px 0px transparent;
+      transition: 0.5s;
+      }
+  
+     .table{
+       margin:5px;
+       border-collapse: collapse;
+       width: 100%;
+     }
+  
+  
+  #custom-search-input {
+    margin:0;
+    margin-top: 24px;
+    padding: 2px;
+  }
+  .col-md-12 {
+    width: 62%;
+  }
+
+
+  td { white-space:pre }
+
+#totPrice{
+    color:#000000;
+    font-family:Arial;
+    font-size:14.5px;
+    position: relative;
+    margin-left: 90%;
+}
+
+.removeFromCart{
+  background-color:#c74444;
+  border-radius:20px;
+  border:1px solid #ab2918;
+  display:inline-block;
+  cursor:pointer;
+  color:#000000;
+  font-family:Arial;
+  font-size:14.5px;
+  padding:0.2px 10px;
+  text-decoration:none;
+text-shadow:0px 1px 0px #662727;
+position: relative;
+left: 0px;
+bottom: 1px;
+}
+.removeFromCart:hover {
+  background-color:#ad0000;
+}
+.removeFromCart:active {
+  position:relative;
+  top:1px;
+  outline: none;
+}
+
+#navBar{
+  margin-top: 20px;
+}
+
+#checkoutBtn{
+  position: absolute;
+  margin-left: 178%;
+}
+
+.myButton {
+      background-color:#44c767;
+      border-radius:20px;
+      border:1px solid #18ab29;
+      display:inline-block;
+      cursor:pointer;
+      color:#000000;
+      font-family:Arial;
+      font-size:14.5px;
+      padding:0.2px 20px;
+      text-decoration:none;
+    text-shadow:0px 1px 0px #2f6627;
+    position: relative;
+    left: 10px;
+    bottom: 1px;
+  
+  
+  }
+.myButton:hover {
+      background-color:#3aad00;
+  }
+  .myButton:active {
+      position:relative;
+      outline: none;
+  }
+  
+  
+  table {
+    width: 100%;
+    table-layout: fixed;
+  }
+  
+  th{
+    width: 90px;
+  }
+  
+   td {
+    overflow: hidden;
+    width: 90px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .jumbotron{
+    background-image:linear-gradient(to bottom right, #28ffbe3a, rgba(70, 212, 255, 0.233));
+  }
+
+  .box{
+    margin: 5px;
+  }

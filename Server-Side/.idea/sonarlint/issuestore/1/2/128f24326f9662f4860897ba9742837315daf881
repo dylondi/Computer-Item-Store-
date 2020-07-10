@@ -1,0 +1,4 @@
+
+Usquid:S1068"2Remove this unused "NOT_APPLICABLE" private field.(Ø İËüÿÿÿÿ8ÏŞş‹.
+¤squid:S1186s"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Àê°üÿÿÿÿ8ÒÊŸ‚Œ.
+ssquid:S1206Y"PThis class overrides "equals()" and should therefore also override "hashCode()".(İ¢êÍıÿÿÿÿ8ÏŞş‹.
