@@ -48,7 +48,6 @@ public class InventoryController {
         Reader reader = new Reader();
         ComputerComponent cc = reader.findComponent(inventory.getParsedInventory(), name);
         List<ComputerComponent> list = new ArrayList<>();
-        ;
         list.add(cc);
         return sortForGUI(list);
     }
